@@ -1,0 +1,123 @@
+////
+Nombre y título del trabajo
+////
+= EDA II – Diseño del programa principal con argumentos
+:navtitle: Introducción
+
+// Bloque para GitHub, para que al visualizar el .adoc encuentre las figuras.
+ifdef::env-github[]
+:imagesdir: ../images
+:figure-caption: Figura
+endif::[]
+
+Estructuras de datos y Algoritmos II (EDA II). 2º Grado en Ingeniería Informática. Universidad de Almería
+
+_Version_ *{page-component-display-version}*
+
+
+////
+COLOCA A CONTINUACION LOS OBJETIVOS
+////
+== Objetivos
+====
+* Describir en Java el diseño del programa principal (`main`) con argumentos en la llamada
+* Mostrar ejemplos de llamada al programa principal en la Práctica 4
+====
+
+== Método `main` con argumentos
+
+Para la ejecución de los algoritmos, y con el objetivo de facilitar la ejecución de los distintos algoritmos implementados sobre los distintos archivos de datos *sin tener que modificar el código fuente*, se muestra cómo diseñar el método principal (`main`) para que permita recibir argumentos, separados por espacios en blanco. Para ello, se usará el parámetro `args` en la llamada a `main`, como en el siguiente ejemplo:
+
+[source,java,subs="verbatim,quotes"]
+----
+package org.ualeda2.mainWithArguments;
+
+public class MainWithArguments {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("The number of arguments is: "+args.length);
+		System.out.println("Your first argument is: "+args[0]);  
+        System.out.println("Your second argument is: "+args[1]);  
+
+	}
+
+}
+----
+
+=== Ejecución con Eclipse
+
+Para ejecutar en Eclipse, como siembre, sobre la clase Java, botón derecho, _Run as..., Java Application_:
+
+[#fig-runasjava]
+.Run as... Java Application
+image::runAsJava.png[Run as... Java Application,width=540,pdfwidth=50%,align="center"]
+
+La salida por consola mostrará la excepción `ArrayIndexOutOfBoundsException` cuando intenta acceder a `args[0]`, porque no le hemos puesto argumentos.
+
+[source,xml,subs="verbatim,quotes"]
+----
+The number of arguments is: 0
+*Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at org.ualeda2.mainWithArguments.MainWithArguments.main(MainWithArguments.java:8)*
+----
+
+Para añadir argumentos, menú _Run, Run Configurations_. A continuación, buscamos la configuración de ejecución de `MainWithArguments`, y editamos la pestaña `Arguments`:
+
+[#fig-runconfigurations]
+.Run Configurations with Arguments
+image::runConfigurations.png[Run Configurations with Arguments,width=640,pdfwidth=60%,align="center"]
+
+Volvemos a ejecutar, y ahora la ejecución será correcta.
+
+[#fig-consoleArgumentsOk]
+.Salida por consola correcta
+image::consoleArgumentsOk.png[Salida por consola correcta,width=640,pdfwidth=60%,align="center"]
+
+=== Ejecución desde el terminal
+
+Otra alternativa para ejecutar nuestra aplicación con argumentos es llamarla desde el terminal.  Abre el terminal como una vista dentro de Eclipse: sobre la clase Java, botón derecho, _Show in local terminal, Terminal_.
+
+Y en el terminal llama a tu programa con:
+
+`java MainWithArguments.java TSP graphEDAlandTSP.txt`
+
+[#fig-consoleArgumentsOk]
+.Llamada al programa Java desde consola con argumentos
+image::consoleCallJava.png[Llamada al programa Java desde consola con argumentos,width=840,pdfwidth=80%,align="center"]
+
+Esta es la _opción recomendada_, ya que te permite escribir los argumentos facilmente, y usar las flechas arriba y abajo para repetir comandos previos.
+
+== Argumentos en Práctica 4
+
+Los argumentos que debe permitir en la llamada al programa principal son: 
+
+. Primer argumento: `algoritmo` a ejecutar (ejemplos: `TSP_distance`, `TSP_fuel`, `HamiltonianCycles`, `Backtraking`, `BandB`, ¿otros?...) 
+. Segundo argumento: `carpeta/archivoDeDatos.txt` (es recomendable que acepte _rutas relativas, no absolutas_)
+. Tercer argumento (_opcional_): `vérticeDePartida`
+
+*Ejemplos de llamadas en la práctica 4*
+
+. *Caso 1* del _Trabajo a desarrollar_: _todos los posibles circuitos partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland._
+Argumentos: 
+
+ HamiltonianCycles dataset/graphEDAlandTSP.txt Almeria
+
+. *Caso 2* del _Trabajo a desarrollar_: _Circuito que, partiendo desde Almería, visite cada ciudad de la nueva red reducida de carreteras de EDAland exactamente una vez, regresando a Almería y habiendo recorrido en total la menor distancia posible._
+Argumentos: 
+
+ TSP_distance dataset/graphEDAlandTSP.txt Almeria
+
+. *Caso 3* del _Trabajo a desarrollar_: _Circuito que, partiendo de Almería, recorra cada ciudad exactamente una vez, regrese a Almería y cuyo gasto en combustible sea el mínimo posible, en la nueva red reducida de carreteras de EDAland._
+Para este caso, cada grupo ha debido generar un nuevo archivo de datos `graphEDAlandTSPFuels.txt` con los valores aleratorios (reales) tal y como se indica en el enunciado de la práctica. 
+Argumentos: 
+
+ TSP_fuel dataset/graphEDAlandTSPFuels.txt Almeria
+
+
+. *Caso 4* del _Trabajo a desarrollar_: _Circuito en la red nacional de carreteras completa, partiendo de un núcleo urbano cualquiera, que visite cada población exactamente una vez, regrese al núcleo de partida y tenga la menor distancia posible._
+Argumentos (ejemplo): 
+
+ algoritmo dataset/graphEDAlandLarge.txt numVertice
+
+
