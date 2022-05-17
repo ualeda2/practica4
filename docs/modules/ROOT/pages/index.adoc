@@ -1,7 +1,7 @@
 ////
 Nombre y título del trabajo
 ////
-= PRÁCTICA 4 – Backtracking y Branch-and-Bound. Un repartidor muy eficaz
+= PRÁCTICA 4 – Backtracking y Branch-and-Bound. Un repartidor muy eficaz (Versión reducida)
 :navtitle: Introducción
 
 // Bloque para GitHub, para que al visualizar el .adoc encuentre las figuras.
@@ -12,7 +12,7 @@ endif::[]
 
 Estructuras de datos y Algoritmos II (EDA II). 2º Grado en Ingeniería Informática. Universidad de Almería
 
-_Version_ *{page-component-display-version}*
+_Version_ *{page-component-display-version}* - reducida
 
 
 ////
