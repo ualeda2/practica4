@@ -541,39 +541,19 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>(<strong><em>Backtracking</em></strong>) Determinar todos los posibles circuitos, si es que hubiera más de uno, partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland, donde Braulio debe dejar un lote de periódicos, exactamente una vez y regresar a Almería.</p>
+<p>(<strong><em>Backtracking</em></strong>) Determinar todos los posibles circuitos, si es que hubiera más de uno, partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland, donde Braulio debe dejar un lote de periódicos, exactamente una vez y regresar a Almería. Si hubiera más de uno, indique entre todos ellos el cirtuito de menor distancia.</p>
+<div class="paragraph">
+<p>Para este primer caso (<strong><em>Backtracking</em></strong>), implemente en Java el algoritmo <em>El problema del viajante</em> de las transparencias de clase de teoría, recomponiendolo para que funcione (ya que el de las transparecias puede tener algun error), definiendo las variables de forma que se adapten a la recursividad. Haga además un cálculo más o menos ajustado de las necesidades de pila que va a necesitar. En caso de tener problemas con el grafo de EDA I, utilice una matriz NxN.</p>
+</div>
 </li>
 <li>
-<p>(<strong><em>Backtracking</em></strong>) Determinar un circuito que, partiendo desde Almería, visite cada ciudad exactamente una vez, regresando a Almería y habiendo recorrido en total la menor distancia posible. Resolver este problema para la nueva red reducida de carreteras de EDAland.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="green">Para estos dos primeros casos (<strong><em>Backtracking</em></strong>), implemente en Java el algoritmo <em>El problema del viajante</em> de las transparencias de clase de teoría, recomponiendolo para que funcione (ya que el de las transparecias falla), definiendo las variables de forma que se adapten a la recursividad. Haga además un cálculo más o menos ajustado de las necesidades de pila que va a necesitar (recuerde que puede <a href="https://stackoverflow.com/a/15313451">aumentar el tamaño del heap</a> de la máquina virtual Java).</span></p>
-</div>
-<div class="paragraph">
-<p><span class="green">En caso de tener problemas con el grafo de EDA I, utilice una matriz NxN. Además, para comprobar que los algoritmos funcionan sobre dicha red, lleve a cabo una traza de la ejecución de los mismos en la que muestre su estado en función de la iteración o cada cierto tiempo.</span></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>(<strong><em>Branch-and-Bound</em></strong>) <span class="line-through">Modificar el valor de las aristas de la nueva red reducida de carreteras de la siguiente manera (esto supone que tendremos una nueva red reducida de carreteras con valores diferentes en las aristas): multiplicar el valor de la distancia por un número real aleatorio <em>x, 0.5 ≤ x ≤ 1.0</em>, de tal forma que el peso de las aristas ahora sea un número real (<code>double</code>) con dos cifras decimales, que podría corresponderse con el gasto en combustible de desplazarse de una ciudad a otra. Sobre esta nueva red, que debe estar guardada en un nuevo archivo de nombre <code>graphEDAlandTSPFuels.txt</code>, determinar un circuito que debe seguir Braulio, partiendo de Almería, recorra cada ciudad exactamente una vez, regrese a Almería y cuyo gasto en combustible sea el mínimo posible.</span></p>
+<p>(<strong><em>Branch-and-Bound</em></strong>) Determinar un circuito que, partiendo desde Almería, visite cada ciudad exactamente una vez, regresando a Almería y habiendo recorrido en total la menor distancia posible. Resolver este problema para la nueva red reducida de carreteras de EDAland.</p>
 </li>
 <li>
-<p>(<strong><em>Branch-and-Bound</em></strong>) <span class="green"><em>¿Los mismos 2 primeros puntos, ahora con _Branch-and-Bound</em> ?????? <em>¿O bien nada con BaB?????</em>.</span></p>
+<p>(<em>Opcional</em>) Haciendo uso del algoritmo <strong><em>Branch-and-Bound</em></strong> implementado en los apartados anteriores, debe intentar obtener el circuito en la red nacional de carreteras completa, partiendo de un núcleo urbano cualquiera, que visite cada población exactamente una vez, regrese al núcleo de partida y tenga la menor distancia posible. Para comprobar que los algoritmos funcionan sobre dicha red, lleve a cabo una <em>traza de la ejecución</em> de los mismos en la que muestre su estado en función de la iteración o cada cierto tiempo. ¿Qué conclusiones obtiene del intento?. ¿Existe alguna forma de resolver el problema que se le ha planteado?. Indíquelo todo de forma razonada.</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p><span class="green"><em>¿¿¿Hay que indicar algún párrafo similar sobre que implementen el algortimo de las transparencias del tema Branch-and-Bound ???? En tal caso, indicar cual.</em></span></p>
-</div>
-<div class="paragraph">
-<p><span class="green"><em>Con los Erasmus aun no hemos empezado Backtracking, y como no estoy siguiendo las transparencias de Fernando, así que yo *tampoco he trabajado las transparencias ni los algoritmos de las transparencias*</em></span></p>
-</div>
-<div class="ulist">
-<ul>
 <li>
-<p>(<span class="green">¿Ponemos este punto Opcional?????)</span> Haciendo uso de los algoritmos (<strong><em>Backtracking</em></strong> y <strong><em>Branch-and-Bound</em></strong>) implementados en los apartados anteriores, debe intentar obtener el circuito en la red nacional de carreteras completa, partiendo de un núcleo urbano cualquiera, que visite cada población exactamente una vez, regrese al núcleo de partida y tenga la menor distancia posible. ¿Qué conclusiones obtiene del intento?. ¿Existe alguna forma de resolver el problema que se le ha planteado?. Indíquelo todo de forma razonada <span class="line-through">, justificándolo correctamente</span>. Además, para comprobar que los algoritmos funcionan sobre dicha red, lleve a cabo una traza de la ejecución de los mismos en la que muestre su estado en función de la iteración o cada cierto tiempo.</p>
+<p>(<em>Opcional</em>) Lo mismo que el punto anterior, pero para el algoritmo <strong><em>Backtracking</em></strong>.</p>
 </li>
 </ul>
 </div>
@@ -586,10 +566,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><strong>Estudio de la implementación</strong>: Explicar los detalles más importantes de la implementación llevada a cabo, tanto de las estructuras de datos utilizadas para resolver el problema en cuestión, como de los algoritmos implementados. El código debe de estar razonablemente bien documentado (<code>JavaDoc</code>).</p>
 </li>
 <li>
-<p><span class="line-through"><strong>Estudio teórico</strong>: Estudiar los tiempos de ejecución de los algoritmos de <strong><em>backtracking</em></strong> y <strong><em>branch-and-bound</em></strong> implementados, en función del número de núcleos de población (vértices) y del número de carreteras (aristas). Comparar también los algoritmos propuestos, teniendo en cuenta las características de la red (grafo) y las técnicas de implementación elegidas.</span></p>
-</li>
-<li>
-<p><strong>Estudio experimental</strong>: Validación de los algoritmos de <strong><em>backtracking</em></strong> y <strong><em>branch-and-bound</em></strong> implementados <span class="line-through">sobre las redes de EDAland proporcionadas</span>. Para ello, se deberán obtener y comparar los tiempos de ejecución de los algoritmos implementados. <span class="line-through">Se contrastarán los resultados teóricos y los experimentales, comprobando si los experimentales confirman los teóricos previamente analizados. Se justificarán los experimentos realizados, y en caso de discrepancia entre la teoría y los experimentales obtenidos se deberá intentar buscar una explicación razonada.</span></p>
+<p><strong>Estudio experimental</strong>: Validación de los algoritmos de <strong><em>backtracking</em></strong> y <strong><em>branch-and-bound</em></strong> implementados sobre las redes de EDAland proporcionadas. Para ello, se deberán obtener y comparar los tiempos de ejecución de los algoritmos implementados.</p>
 </li>
 </ul>
 </div>
@@ -604,16 +581,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>En dicho repositorio debe estar la carpeta llamada <code>practica_4</code>, donde debe haber como mínimo una carpeta <code>src</code> para el código fuente, y una carpeta <code>docs</code> para la documentación, <span class="green">incluyendo los JavaDoc y los diagramas de clase generados automáticamente a partir del código fuente</span>, siguiendo la estructura de proyecto Java descrita en la práctica anterior.</p>
+<p>En dicho repositorio debe estar la carpeta llamada <code>practica_4</code>, donde debe haber como mínimo una carpeta <code>src</code> para el código fuente, y una carpeta <code>docs</code> para la documentación, incluyendo los JavaDoc y los diagramas de clase generados automáticamente a partir del código fuente, siguiendo la estructura de proyecto Java descrita en la práctica anterior.</p>
 </li>
 <li>
-<p>Memoria que explique <span class="line-through">todo</span> lo que habéis realizado en la práctica. La memoria deberá tener el formato que se indica a continuación. <span class="line-through">Si se desea, también se podrá realizar una presentación de la práctica.</span></p>
+<p>Memoria simplificada que explique lo que habéis realizado en la práctica. La memoria deberá tener el formato que se indica a continuación.</p>
 </li>
 <li>
-<p>Código fuente de la aplicación, desarrollada en JAVA, que resuelva todo lo planteado en la práctica. Recordad que tendréis que medir tiempos de ejecución de vuestras soluciones por lo que deberéis incluir las órdenes necesarias para ello en el código fuente. <span class="green">Igualmente para mostrar la traza de la ejecución de los mismos en la que muestre su estado en función de la iteración o cada cierto tiempo.</span></p>
-</li>
-<li>
-<p><span class="line-through">Juegos de prueba que consideréis oportunos incluir para asegurarnos de que todo funciona correctamente (en la carpeta <code>test</code>).</span></p>
+<p>Código fuente de la aplicación, desarrollada en JAVA, que resuelva todo lo planteado en la práctica. Recordad que tendréis que medir tiempos de ejecución de vuestras soluciones por lo que deberéis incluir las órdenes necesarias para ello en el código fuente. Igualmente, si ejecuta sus algoritmos sobre la red grande de EDAland, no olvidéis mostrar la traza de la ejecución de los mismos en la que muestre su estado en función de la iteración o cada cierto tiempo.</p>
 </li>
 </ul>
 </div>
@@ -623,16 +597,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><span class="line-through">Una breve <strong>introducción</strong> con un estudio teórico del método algorítmico utilizado en esta práctica (<strong><em>backtracking</em></strong> y <strong><em>branch-and-bound</em></strong>).</span></p>
+<p>Una sección para cada uno de <strong>apartados propuestos</strong> a desarrollar en esta práctica (estudio de la implementación y estudio experimental).</p>
 </li>
 <li>
-<p>Una sección para cada uno de <strong>apartados propuestos</strong> a desarrollar en esta práctica (estudio de la implementación, <span class="line-through">estudio teórico</span> y estudio experimental). <span class="line-through">Hemos de remarcar que deben incluirse los apartados en el mismo orden en el que se han expuesto.</span></p>
-</li>
-<li>
-<p>Se incluirá también un <strong>anexo</strong> con el diseño del código implementado con diagramas de clases (copiar aquí los diagramas de clases generados automáticamente). <span class="line-through">y cualquier otro diagrama que estiméis necesario incluir, no introducir ningún código en este anexo. Además, añadir en esta sección una lista de los archivos fuente y una breve descripción del contenido de cada uno.</span></p>
-</li>
-<li>
-<p><span class="line-through">Es importante incluir siempre las <strong>fuentes bibliográficas</strong> utilizadas (web, libros, artículos, etc.) y hacer referencia a ellas en el documento.</span></p>
+<p>Se incluirá también un <strong>anexo</strong> con el diseño del código implementado con diagramas de clases (copiar aquí los diagramas de clases generados automáticamente).</p>
 </li>
 </ul>
 </div>
@@ -647,21 +615,15 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>La implementación junto con la documentación del código se valorará sobre un <span class="line-through">40%</span> <span class="green">60%</span></p>
+<p>La implementación junto con la documentación del código se valorará sobre un <span class="green">60%</span></p>
 </li>
 <li>
-<p>El estudio de la implementación se valorará sobre un <span class="line-through">10%</span> <span class="green">20%</span></p>
+<p>El estudio de la implementación se valorará sobre un <span class="green">20%</span></p>
 </li>
 <li>
-<p><span class="line-through">El estudio teórico se valorará sobre un 15%</span></p>
-</li>
-<li>
-<p>El estudio experimental se valorará sobre un <span class="line-through">35%</span> <span class="green">20%</span></p>
+<p>El estudio experimental se valorará sobre un <span class="green">20%</span></p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><span class="line-through">Se penalizará no entregar el apartado de introducción teórico o una mala presentación de la memoria.</span></p>
 </div>
 <div class="paragraph">
 <p>Se podrá requerir la defensa del código y de la memoria por parte de profesor.</p>
@@ -672,8 +634,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_fecha_de_entrega">Fecha de entrega</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Fecha de entrega: <strong><span class="line-through">5 de Junio</span> 30 de mayo de 2022</strong>
-<span class="green"><em>Los exámenes los empiezan el 1 de junio, y tienen un examen cada 2 ó 3 días, hasta el nuestro que es el último el día 11 de junio&#8230;&#8203; Tal vez si movemos la entrega a antes del periodo de exámenes, habría que reducir aun más la práctica&#8230;&#8203; no se&#8230;&#8203;</em></span></p>
+<p>Fecha de entrega: <strong>5 de Junio</strong></p>
 </div>
 </div>
 </div>

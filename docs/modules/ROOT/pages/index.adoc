@@ -55,72 +55,54 @@ image::pr2-fig2.png[Red nacional de caminos de EDAland,width=640,pdfwidth=80%,al
 
 Deberá proponer e implementar soluciones con los esquemas algorítmicos de *_backtracking_* y *_branch-and-bound_*, según se requiera, a los problemas que se plantean a continuación.
 
-* (*_Backtracking_*) Determinar todos los posibles circuitos, si es que hubiera más de uno, partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland, donde Braulio debe dejar un lote de periódicos, exactamente una vez y regresar a Almería. 
+* (*_Backtracking_*) Determinar todos los posibles circuitos, si es que hubiera más de uno, partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland, donde Braulio debe dejar un lote de periódicos, exactamente una vez y regresar a Almería. Si hubiera más de uno, indique entre todos ellos el cirtuito de menor distancia. 
 
-* (*_Backtracking_*) Determinar un circuito que, partiendo desde Almería, visite cada ciudad exactamente una vez, regresando a Almería y habiendo recorrido en total la menor distancia posible. Resolver este problema para la nueva red reducida de carreteras de EDAland.
++
+Para este primer caso (*_Backtracking_*), implemente en Java el algoritmo _El problema del viajante_ de las transparencias de clase de teoría, recomponiendolo para que funcione (ya que el de las transparecias puede tener algun error), definiendo las variables de forma que se adapten a la recursividad. Haga además un cálculo más o menos ajustado de las necesidades de pila que va a necesitar. En caso de tener problemas con el grafo de EDA I, utilice una matriz NxN.
 
-[green]#Para estos dos primeros casos (*_Backtracking_*), implemente en Java el algoritmo _El problema del viajante_ de las transparencias de clase de teoría, recomponiendolo para que funcione (ya que el de las transparecias falla), definiendo las variables de forma que se adapten a la recursividad. Haga además un cálculo más o menos ajustado de las necesidades de pila que va a necesitar (recuerde que puede https://stackoverflow.com/a/15313451[aumentar el tamaño del heap] de la máquina virtual Java).# 
+* (*_Branch-and-Bound_*) Determinar un circuito que, partiendo desde Almería, visite cada ciudad exactamente una vez, regresando a Almería y habiendo recorrido en total la menor distancia posible. Resolver este problema para la nueva red reducida de carreteras de EDAland.
 
-[green]#En caso de tener problemas con el grafo de EDA I, utilice una matriz NxN. Además, para comprobar que los algoritmos funcionan sobre dicha red, lleve a cabo una traza de la ejecución de los mismos en la que muestre su estado en función de la iteración o cada cierto tiempo.#
+* (_Opcional_) Haciendo uso del algoritmo *_Branch-and-Bound_* implementado en los apartados anteriores, debe intentar obtener el circuito en la red nacional de carreteras completa, partiendo de un núcleo urbano cualquiera, que visite cada población exactamente una vez, regrese al núcleo de partida y tenga la menor distancia posible. Para comprobar que los algoritmos funcionan sobre dicha red, lleve a cabo una _traza de la ejecución_ de los mismos en la que muestre su estado en función de la iteración o cada cierto tiempo. ¿Qué conclusiones obtiene del intento?. ¿Existe alguna forma de resolver el problema que se le ha planteado?. Indíquelo todo de forma razonada.
 
-* (*_Branch-and-Bound_*) [.line-through]#Modificar el valor de las aristas de la nueva red reducida de carreteras de la siguiente manera (esto supone que tendremos una nueva red reducida de carreteras con valores diferentes en las aristas): multiplicar el valor de la distancia por un número real aleatorio _x, 0.5 ≤ x ≤ 1.0_, de tal forma que el peso de las aristas ahora sea un número real (`double`) con dos cifras decimales, que podría corresponderse con el gasto en combustible de desplazarse de una ciudad a otra. Sobre esta nueva red, que debe estar guardada en un nuevo archivo de nombre `graphEDAlandTSPFuels.txt`, determinar un circuito que debe seguir Braulio, partiendo de Almería, recorra cada ciudad exactamente una vez, regrese a Almería y cuyo gasto en combustible sea el mínimo posible.#
-
-* (*_Branch-and-Bound_*) [green]#_¿Los mismos 2 primeros puntos, ahora con _Branch-and-Bound_ ?????? _¿O bien nada con BaB?????_.#
-
-[green]#_¿¿¿Hay que indicar algún párrafo similar sobre que implementen el algortimo de las transparencias del tema Branch-and-Bound ???? En tal caso, indicar cual._#
-
-[green]#_Con los Erasmus aun no hemos empezado Backtracking, y como no estoy siguiendo las transparencias de Fernando, así que yo *tampoco he trabajado las transparencias ni los algoritmos de las transparencias*_#
-
-* ([green]#¿Ponemos este punto Opcional?????)# Haciendo uso de los algoritmos (*_Backtracking_* y *_Branch-and-Bound_*) implementados en los apartados anteriores, debe intentar obtener el circuito en la red nacional de carreteras completa, partiendo de un núcleo urbano cualquiera, que visite cada población exactamente una vez, regrese al núcleo de partida y tenga la menor distancia posible. ¿Qué conclusiones obtiene del intento?. ¿Existe alguna forma de resolver el problema que se le ha planteado?. Indíquelo todo de forma razonada [.line-through]#, justificándolo correctamente#. Además, para comprobar que los algoritmos funcionan sobre dicha red, lleve a cabo una traza de la ejecución de los mismos en la que muestre su estado en función de la iteración o cada cierto tiempo.
-
+* (_Opcional_) Lo mismo que el punto anterior, pero para el algoritmo *_Backtracking_*.
 
 Para ello deberá realizar los siguientes apartados:
 
 * *Estudio de la implementación*: Explicar los detalles más importantes de la implementación llevada a cabo, tanto de las estructuras de datos utilizadas para resolver el problema en cuestión, como de los algoritmos implementados. El código debe de estar razonablemente bien documentado (`JavaDoc`).
 
-* [.line-through]#*Estudio teórico*: Estudiar los tiempos de ejecución de los algoritmos de *_backtracking_* y *_branch-and-bound_* implementados, en función del número de núcleos de población (vértices) y del número de carreteras (aristas). Comparar también los algoritmos propuestos, teniendo en cuenta las características de la red (grafo) y las técnicas de implementación elegidas.#
-
-* *Estudio experimental*: Validación de los algoritmos de *_backtracking_* y *_branch-and-bound_* implementados [.line-through]#sobre las redes de EDAland proporcionadas#. Para ello, se deberán obtener y comparar los tiempos de ejecución de los algoritmos implementados. [.line-through]#Se contrastarán los resultados teóricos y los experimentales, comprobando si los experimentales confirman los teóricos previamente analizados. Se justificarán los experimentos realizados, y en caso de discrepancia entre la teoría y los experimentales obtenidos se deberá intentar buscar una explicación razonada.# 
+* *Estudio experimental*: Validación de los algoritmos de *_backtracking_* y *_branch-and-bound_* implementados sobre las redes de EDAland proporcionadas. Para ello, se deberán obtener y comparar los tiempos de ejecución de los algoritmos implementados. 
 
 == Entregas
 
 Se ha de entregar, en fecha, en el repositorio https://docs.github.com/es/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#[privado] de GitHub para todas las prácticas de la asignatura con acceso para el/los profesor/es que evalúa/n las prácticas (mismo repositorio para todas las prácticas de EDA II), con la documentación y el código fuente requerido en la práctica:
 
-* En dicho repositorio debe estar la carpeta llamada `practica_4`, donde debe haber como mínimo una carpeta `src` para el código fuente, y una carpeta `docs` para la documentación, [green]#incluyendo los JavaDoc y los diagramas de clase generados automáticamente a partir del código fuente#, siguiendo la estructura de proyecto Java descrita en la práctica anterior.
+* En dicho repositorio debe estar la carpeta llamada `practica_4`, donde debe haber como mínimo una carpeta `src` para el código fuente, y una carpeta `docs` para la documentación, incluyendo los JavaDoc y los diagramas de clase generados automáticamente a partir del código fuente, siguiendo la estructura de proyecto Java descrita en la práctica anterior.
 
-* Memoria que explique [.line-through]#todo# lo que habéis realizado en la práctica. La memoria deberá tener el formato que se indica a continuación. [.line-through]#Si se desea, también se podrá realizar una presentación de la práctica.#
+* Memoria simplificada que explique lo que habéis realizado en la práctica. La memoria deberá tener el formato que se indica a continuación.
 
-* Código fuente de la aplicación, desarrollada en JAVA, que resuelva todo lo planteado en la práctica. Recordad que tendréis que medir tiempos de ejecución de vuestras soluciones por lo que deberéis incluir las órdenes necesarias para ello en el código fuente. [green]#Igualmente para mostrar la traza de la ejecución de los mismos en la que muestre su estado en función de la iteración o cada cierto tiempo.#
+* Código fuente de la aplicación, desarrollada en JAVA, que resuelva todo lo planteado en la práctica. Recordad que tendréis que medir tiempos de ejecución de vuestras soluciones por lo que deberéis incluir las órdenes necesarias para ello en el código fuente. Igualmente, si ejecuta sus algoritmos sobre la red grande de EDAland, no olvidéis mostrar la traza de la ejecución de los mismos en la que muestre su estado en función de la iteración o cada cierto tiempo.
 
-* [.line-through]#Juegos de prueba que consideréis oportunos incluir para asegurarnos de que todo funciona correctamente (en la carpeta `test`).#
 
 La memoria de práctica a entregar debe ser breve, clara y estar bien escrita. Ésta debe incluir las siguientes secciones:
 
-* [.line-through]#Una breve *introducción* con un estudio teórico del método algorítmico utilizado en esta práctica (*_backtracking_* y *_branch-and-bound_*).#
+* Una sección para cada uno de *apartados propuestos* a desarrollar en esta práctica (estudio de la implementación y estudio experimental).
 
-* Una sección para cada uno de *apartados propuestos* a desarrollar en esta práctica (estudio de la implementación, [.line-through]#estudio teórico# y estudio experimental). [.line-through]#Hemos de remarcar que deben incluirse los apartados en el mismo orden en el que se han expuesto.#
-
-* Se incluirá también un *anexo* con el diseño del código implementado con diagramas de clases (copiar aquí los diagramas de clases generados automáticamente). [.line-through]#y cualquier otro diagrama que estiméis necesario incluir, no introducir ningún código en este anexo. Además, añadir en esta sección una lista de los archivos fuente y una breve descripción del contenido de cada uno.# 
-
-* [.line-through]#Es importante incluir siempre las *fuentes bibliográficas* utilizadas (web, libros, artículos, etc.) y hacer referencia a ellas en el documento.#
+* Se incluirá también un *anexo* con el diseño del código implementado con diagramas de clases (copiar aquí los diagramas de clases generados automáticamente).
 
 == Evaluación
 
 Cada apartado se evaluará independientemente, aunque es condición necesaria para aprobar la práctica que los programas implementados funcionen correctamente.
 
-* La implementación junto con la documentación del código se valorará sobre un [.line-through]#40%# [green]#60%#
-* El estudio de la implementación se valorará sobre un [.line-through]#10%# [green]#20%#
-* [.line-through]#El estudio teórico se valorará sobre un 15%#
-* El estudio experimental se valorará sobre un [.line-through]#35%# [green]#20%#
+* La implementación junto con la documentación del código se valorará sobre un [green]#60%#
+* El estudio de la implementación se valorará sobre un [green]#20%#
+* El estudio experimental se valorará sobre un [green]#20%#
 
-[.line-through]#Se penalizará no entregar el apartado de introducción teórico o una mala presentación de la memoria.#
 
 Se podrá requerir la defensa del código y de la memoria por parte de profesor.
 
 == Fecha de entrega
 
-Fecha de entrega: *[.line-through]#5 de Junio# 30 de mayo de 2022*
-[green]#_Los exámenes los empiezan el 1 de junio, y tienen un examen cada 2 ó 3 días, hasta el nuestro que es el último el día 11 de junio... Tal vez si movemos la entrega a antes del periodo de exámenes, habría que reducir aun más la práctica... no se..._#
+Fecha de entrega: *5 de Junio*
 
 
 [bibliography]
