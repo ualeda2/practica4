@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
 <meta name="keywords" content="EDAII Algoritmos">
-<title>Practice 4 – Backtracking y Branch-and-Bound. A very efficient delivery man</title>
+<title>Practice 4 – Backtracking y Branch-and-Bound. A very efficient delivery man (Reduced version)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -440,7 +440,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </head>
 <body class="article toc2 toc-right text-justify">
 <div id="header">
-<h1>Practice 4 – Backtracking y Branch-and-Bound. A very efficient delivery man</h1>
+<h1>Practice 4 – Backtracking y Branch-and-Bound. A very efficient delivery man (Reduced version)</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Tabla de contenidos</div>
 <ul class="sectlevel1">
@@ -462,7 +462,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>Data Structures and Algorithms II. University of Almeria</p>
 </div>
 <div class="paragraph">
-<p><em>Version</em> <strong>curso.2022</strong></p>
+<p><em>Version</em> <strong>curso.2022</strong> - reduced</p>
 </div>
 </div>
 </div>
@@ -541,18 +541,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>(<strong><em>Backtracking</em></strong>) Determine all the possible paths, if there were more than one, starting from Almeria, that go through each city of the new reduced road network of EDAland, where Braulio must leave a batch of newspapers, exactly once and return to Almeria.</p>
-</li>
-<li>
-<p>(<strong><em>Backtracking</em></strong>)
-Determine a path that, starting from Almeria, visits each city exactly once, returning to Almeria and having traveled the shortest  distance. Solve this problem for the new reduced road network of EDAland.</p>
+<p>(<strong><em>Backtracking</em></strong>) Determine all the possible paths, if there were more than one, starting from Almeria, that go through each city of the new reduced road network of EDAland, where Braulio must leave a batch of newspapers, exactly once and return to Almeria. If there is more than one path, determine the path with the shortest distance.</p>
+<div class="paragraph">
+<p>For this first case (<strong><em>Backtracking</em></strong>), implement the algorithm <em>The traveling salesman problem</em> of the theory class transparencies, recomposing it so that it works (since the transparencies one may have some error), defining the variables in such a way that accommodate recursion. Also make a more or less adjusted calculation of the stack needs that you will need. In case of problems with the EDA I graph, use an NxN matrix.</p>
+</div>
 </li>
 <li>
 <p>(<strong><em>Branch-and-Bound</em></strong>)
-Modify the value of the edges of the new reduced road network as follows (this assumes that we will have a new reduced road network with different values ​​for the edges): multiply the distance value by a random real number <em>x, 0.5 ≤ x ≤ 1.0</em>, so that the weight of the edges is now a real number (<code>double</code>) with two decimal places, which could correspond to the fuel cost of moving from one city to another. On this new network, that should be saved on a new datafile named <code>graphEDAlandTSPFuels.txt</code>, determine a path that Braulio must follow, starting from Almeria, going through each city exactly once, returning to Almeria and spending as little fuel as possible.</p>
+Determine a circuit that, starting from Almería, visits each city exactly once, returning to Almería and having covered the shortest possible distance in total. Solve this problem for the new reduced road network of EDAland.</p>
 </li>
 <li>
-<p>Using the algorithms (<strong><em>Backtracking</em></strong> and  <strong><em>Branch-and-Bound</em></strong>) implemented in previous sections, you must try to obtain the path in the complete national road network, starting from any urban nucleus, visiting each town exactly once, returning to the starting nucleus and having the shortest possible distance. What conclusions do you get from the attempt? Is there any way to solve the problem that has been raised? Indicate everything in a reasonable way, justifying it correctly. In addition, to verify that the algorithms work on said network, carry out a trace of their execution in which it shows their status depending on the iteration or every certain time.</p>
+<p>(<em>Optative</em>) Using the algorithms (<strong><em>Backtracking</em></strong> and  <strong><em>Branch-and-Bound</em></strong>) implemented in previous sections, you must try to obtain the path in the complete national road network, starting from any urban nucleus, visiting each town exactly once, returning to the starting nucleus and having the shortest possible distance. To verify that the algorithms work on said on the complete national road network, add an <em>execution trace</em> on them in showing its status depending of the iteration or every certain time. What conclusions do you get from the attempt? Is there any way to solve the problem that has been raised? Indicate everything in a reasonable way.</p>
 </li>
 </ul>
 </div>
@@ -565,10 +564,7 @@ Modify the value of the edges of the new reduced road network as follows (this a
 <p><strong>Study of the implementation</strong>: Explain the most important details of the implementation, both of the data structures used to solve the specific problem, and of the implemented algorithms. The code must be reasonably well documented (<code>JavaDoc</code>).</p>
 </li>
 <li>
-<p><strong>Theoretical study</strong>: Study the execution times of the implemented <strong><em>backtracking</em></strong> and <strong><em>branch-and-bound</em></strong>  algorithms, depending on the number of population centers (vertexes) and the number of paths (edges). Also compare the proposed algorithms, taking into account the characteristics of the network (graph) and the chosen implementation techniques.</p>
-</li>
-<li>
-<p><strong>Experimental study</strong>: Validation of the <strong><em>backtracking</em></strong> and <strong><em>branch-and-bound</em></strong> algorithms implemented on the EDAland networks provided. To do this, the execution times of the implemented algorithms must be obtained and compared. The theoretical and experimental results will be contrasted, checking if the experimental ones confirm the previously analyzed theoretical ones. The experiments carried out will be justified, and in case of discrepancy between the theory and the experiments, an attempt should be made to find a reasoned explanation.</p>
+<p><strong>Experimental study</strong>: Validation of the <strong><em>backtracking</em></strong> and <strong><em>branch-and-bound</em></strong> algorithms implemented on the EDAland networks provided. To do this, the execution times of the implemented algorithms must be obtained and compared.</p>
 </li>
 </ul>
 </div>
@@ -583,16 +579,13 @@ Modify the value of the edges of the new reduced road network as follows (this a
 <div class="ulist">
 <ul>
 <li>
-<p>In that repository, a new folder <code>practica_4</code>, with at least two subfolders, one for the documentation, <code>docs</code>, and one for the source code, <code>src</code>, folowing the same project structure explained in previous practice.</p>
+<p>In that repository, a new folder <code>practica_4</code>, with at least two subfolders, one for the documentation, <code>docs</code>, and one for the source code, <code>src</code>, including the JavaDoc and class diagrams generated automatically from the source code, folowing the same project structure explained in previous practice.</p>
 </li>
 <li>
-<p>A memory document that explains everything you have done in practice. The memory must have the format indicated below. If desired, you can also make a presentation of the practice.</p>
+<p>A simplified memory document that explains everything you have done in practice. The memory must have the format indicated below.</p>
 </li>
 <li>
-<p>Source code of the application, developed in JAVA, which solves everything raised in practice. Remember that you will have to measure execution times of your solutions, so you must include the necessary commands for this in the source code.</p>
-</li>
-<li>
-<p>Test suite with unit tests that you consider appropriate to make sure that everything works properly (in the <code>test</code> folder).</p>
+<p>Source code of the application, developed in JAVA, which solves everything raised in practice. Remember that you will have to measure execution times of your solutions, so you must include the necessary commands for this in the source code. Likewise, if you run your algorithms on the large EDAland network, don&#8217;t forget to show the trace of their execution in which you show their status depending on the iteration or every so often.</p>
 </li>
 </ul>
 </div>
@@ -602,16 +595,10 @@ Modify the value of the edges of the new reduced road network as follows (this a
 <div class="ulist">
 <ul>
 <li>
-<p>A brief <strong>introduction</strong> with a theoretical study of the algorithmic method used in this practice (<strong><em>backtracking</em></strong> and <strong><em>branch-and-bound</em></strong>)..</p>
+<p>A section for each of the <strong>proposed sections</strong> to be developed in this practice (implementation study, and experimental study).</p>
 </li>
 <li>
-<p>A section for each of the <strong>proposed sections</strong> to be developed in this practice (implementation study, theoretical study and experimental study). We must emphasize that the sections must be included in the same order in which they have been presented.</p>
-</li>
-<li>
-<p>An <strong>annex</strong> with the design of the implemented code will also be included, with a class diagram and any other diagram you consider useful, but do not include code here. In this annex, a list of the source files and a brief description of the content of each one must be included as well.</p>
-</li>
-<li>
-<p>It is important to always include the <strong>bibliographical sources</strong> used (web, books, articles, etc.) and refer to them in the document.</p>
+<p>An <strong>annex</strong> with the design of the implemented code will also be included, with a class diagrams automatically generated.</p>
 </li>
 </ul>
 </div>
@@ -626,21 +613,18 @@ Modify the value of the edges of the new reduced road network as follows (this a
 <div class="ulist">
 <ul>
 <li>
-<p>The implementation together with the documentation of the code will be valued out of 40%</p>
+<p>The implementation together with the documentation of the code will be valued out of  <span class="line-through">40%</span> <span class="green">60%</span></p>
 </li>
 <li>
-<p>The study of the implementation will be valued out of 10%</p>
+<p>The study of the implementation will be valued out of <span class="line-through">10%</span> <span class="green">20%</span></p>
 </li>
 <li>
-<p>The theoretical study will be valued out of 15%</p>
+<p><span class="line-through">The theoretical study will be valued out of 15%</span></p>
 </li>
 <li>
-<p>The experimental study will be valued out of 35%</p>
+<p>The experimental study will be valued out of <span class="line-through">35%</span> <span class="green">20%</span></p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>It will be penalized not deliver the theoretical introduction section or a bad presentation of the report.</p>
 </div>
 <div class="paragraph">
 <p>The defense of the code and memory by the teacher may be required.</p>

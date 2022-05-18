@@ -735,7 +735,7 @@ pre.rouge {
 <div class="title">Figura 1. Run as&#8230;&#8203; Java Application</div>
 </div>
 <div class="paragraph">
-<p>La salida por consola mostrará la excepción <code>ArrayIndexOutOfBoundsException</code> cuando intenta acceder a <code>args[0]</code>, porque no le hemos puesto argumentos.</p>
+<p>La salida por consola mostrará la excepción <code>ArrayIndexOutOfBoundsException</code> cuando intenta acceder a <code>args[0]</code>, porque no hemos añadido argumentos en la llamada.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -795,7 +795,7 @@ pre.rouge {
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Primer argumento: <code>algoritmo</code> a ejecutar (ejemplos: <code>TSP_distance</code>, <code>TSP_fuel</code>, <code>HamiltonianCycles</code>, <code>Backtraking</code>, <code>BandB</code>, ¿otros?&#8230;&#8203;)</p>
+<p>Primer argumento: <code>algoritmo</code> a ejecutar (ejemplos: <code>TSP_distance</code>, <code>HamiltonianCycles</code>, <code>Backtraking</code>, <code>BandB</code>, ¿otros?&#8230;&#8203;)</p>
 </li>
 <li>
 <p>Segundo argumento: <code>carpeta/archivoDeDatos.txt</code> (es recomendable que acepte <em>rutas relativas, no absolutas</em>)</p>
@@ -811,39 +811,38 @@ pre.rouge {
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Caso 1</strong> del <em>Trabajo a desarrollar</em>: <em>todos los posibles circuitos partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland.</em>
+<p><strong>Caso 1</strong> del <em>Trabajo a desarrollar</em>: (<strong><em>Backtracking</em></strong>)  _ todos los posibles circuitos partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland. Si hubiera más de uno, indique entre todos ellos el cirtuito de menor distancia._
 Argumentos:</p>
 <div class="literalblock">
 <div class="content">
-<pre>HamiltonianCycles dataset/graphEDAlandTSP.txt Almeria</pre>
+<pre>TSP_Backtraking dataset/graphEDAlandTSP.txt Almeria</pre>
 </div>
 </div>
 </li>
 <li>
-<p><strong>Caso 2</strong> del <em>Trabajo a desarrollar</em>: <em>Circuito que, partiendo desde Almería, visite cada ciudad de la nueva red reducida de carreteras de EDAland exactamente una vez, regresando a Almería y habiendo recorrido en total la menor distancia posible.</em>
+<p><strong>Caso 2</strong> del <em>Trabajo a desarrollar</em>: (<strong><em>Branch-and-Bound</em></strong>)  <em>Determinar un circuito que, partiendo desde Almería, visite cada ciudad exactamente una vez, regresando a Almería y habiendo recorrido en total la menor distancia posible. Resolver este problema para la nueva red reducida de carreteras de EDAland.</em>
 Argumentos:</p>
 <div class="literalblock">
 <div class="content">
-<pre>TSP_distance dataset/graphEDAlandTSP.txt Almeria</pre>
+<pre>TSP_BaB dataset/graphEDAlandTSP.txt Almeria</pre>
 </div>
 </div>
 </li>
 <li>
-<p><strong>Caso 3</strong> del <em>Trabajo a desarrollar</em>: <em>Circuito que, partiendo de Almería, recorra cada ciudad exactamente una vez, regrese a Almería y cuyo gasto en combustible sea el mínimo posible, en la nueva red reducida de carreteras de EDAland.</em>
-Para este caso, cada grupo ha debido generar un nuevo archivo de datos <code>graphEDAlandTSPFuels.txt</code> con los valores aleratorios (reales) tal y como se indica en el enunciado de la práctica.
+<p><strong>Caso 3</strong> del <em>Trabajo a desarrollar</em>: <em>obtener el circuito en la red nacional de carreteras completa, partiendo de un núcleo urbano cualquiera, que visite cada población exactamente una vez, regrese al núcleo de partida y tenga la menor distancia posible.</em>
 Argumentos:</p>
 <div class="literalblock">
 <div class="content">
-<pre>TSP_fuel dataset/graphEDAlandTSPFuels.txt Almeria</pre>
+<pre>TSP_Backtraking dataset/graphEDAlandLarge.txt numVertice</pre>
 </div>
 </div>
 </li>
 <li>
-<p><strong>Caso 4</strong> del <em>Trabajo a desarrollar</em>: <em>Circuito en la red nacional de carreteras completa, partiendo de un núcleo urbano cualquiera, que visite cada población exactamente una vez, regrese al núcleo de partida y tenga la menor distancia posible.</em>
+<p><strong>Caso 4</strong> del <em>Trabajo a desarrollar</em>:
 Argumentos (ejemplo):</p>
 <div class="literalblock">
 <div class="content">
-<pre>algoritmo dataset/graphEDAlandLarge.txt numVertice</pre>
+<pre>TSP_BaB dataset/graphEDAlandLarge.txt numVertice</pre>
 </div>
 </div>
 </li>

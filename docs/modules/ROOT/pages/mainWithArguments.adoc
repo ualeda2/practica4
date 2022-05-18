@@ -53,7 +53,7 @@ Para ejecutar en Eclipse, como siembre, sobre la clase Java, botón derecho, _Ru
 .Run as... Java Application
 image::runAsJava.png[Run as... Java Application,width=540,pdfwidth=50%,align="center"]
 
-La salida por consola mostrará la excepción `ArrayIndexOutOfBoundsException` cuando intenta acceder a `args[0]`, porque no le hemos puesto argumentos.
+La salida por consola mostrará la excepción `ArrayIndexOutOfBoundsException` cuando intenta acceder a `args[0]`, porque no hemos añadido argumentos en la llamada.
 
 [source,xml,subs="verbatim,quotes"]
 ----
@@ -92,32 +92,31 @@ Esta es la _opción recomendada_, ya que te permite escribir los argumentos faci
 
 Los argumentos que debe permitir en la llamada al programa principal son: 
 
-. Primer argumento: `algoritmo` a ejecutar (ejemplos: `TSP_distance`, `TSP_fuel`, `HamiltonianCycles`, `Backtraking`, `BandB`, ¿otros?...) 
+. Primer argumento: `algoritmo` a ejecutar (ejemplos: `TSP_distance`, `HamiltonianCycles`, `Backtraking`, `BandB`, ¿otros?...) 
 . Segundo argumento: `carpeta/archivoDeDatos.txt` (es recomendable que acepte _rutas relativas, no absolutas_)
 . Tercer argumento (_opcional_): `vérticeDePartida`
 
 *Ejemplos de llamadas en la práctica 4*
 
-. *Caso 1* del _Trabajo a desarrollar_: _todos los posibles circuitos partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland._
+. *Caso 1* del _Trabajo a desarrollar_: (*_Backtracking_*)  _ todos los posibles circuitos partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland. Si hubiera más de uno, indique entre todos ellos el cirtuito de menor distancia._
 Argumentos: 
 
- HamiltonianCycles dataset/graphEDAlandTSP.txt Almeria
+ TSP_Backtraking dataset/graphEDAlandTSP.txt Almeria
 
-. *Caso 2* del _Trabajo a desarrollar_: _Circuito que, partiendo desde Almería, visite cada ciudad de la nueva red reducida de carreteras de EDAland exactamente una vez, regresando a Almería y habiendo recorrido en total la menor distancia posible._
+. *Caso 2* del _Trabajo a desarrollar_: (*_Branch-and-Bound_*)  _Determinar un circuito que, partiendo desde Almería, visite cada ciudad exactamente una vez, regresando a Almería y habiendo recorrido en total la menor distancia posible. Resolver este problema para la nueva red reducida de carreteras de EDAland._
 Argumentos: 
 
- TSP_distance dataset/graphEDAlandTSP.txt Almeria
+ TSP_BaB dataset/graphEDAlandTSP.txt Almeria
 
-. *Caso 3* del _Trabajo a desarrollar_: _Circuito que, partiendo de Almería, recorra cada ciudad exactamente una vez, regrese a Almería y cuyo gasto en combustible sea el mínimo posible, en la nueva red reducida de carreteras de EDAland._
-Para este caso, cada grupo ha debido generar un nuevo archivo de datos `graphEDAlandTSPFuels.txt` con los valores aleratorios (reales) tal y como se indica en el enunciado de la práctica. 
+. *Caso 3* del _Trabajo a desarrollar_: _obtener el circuito en la red nacional de carreteras completa, partiendo de un núcleo urbano cualquiera, que visite cada población exactamente una vez, regrese al núcleo de partida y tenga la menor distancia posible._
 Argumentos: 
 
- TSP_fuel dataset/graphEDAlandTSPFuels.txt Almeria
+ TSP_Backtraking dataset/graphEDAlandLarge.txt numVertice
 
 
-. *Caso 4* del _Trabajo a desarrollar_: _Circuito en la red nacional de carreteras completa, partiendo de un núcleo urbano cualquiera, que visite cada población exactamente una vez, regrese al núcleo de partida y tenga la menor distancia posible._
+. *Caso 4* del _Trabajo a desarrollar_: 
 Argumentos (ejemplo): 
 
- algoritmo dataset/graphEDAlandLarge.txt numVertice
+ TSP_BaB dataset/graphEDAlandLarge.txt numVertice
 
 
