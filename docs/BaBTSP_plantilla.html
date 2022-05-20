@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 2.0.17">
 <meta name="keywords" content="EDAII Algoritmos">
-<title>EDA II – Diseño del programa principal con argumentos</title>
+<title>PRÁCTICA 4 – Plantilla de algoritmo BaB para TSP</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
@@ -655,18 +655,12 @@ pre.rouge {
 </head>
 <body class="article toc2 toc-right text-justify">
 <div id="header">
-<h1>EDA II – Diseño del programa principal con argumentos</h1>
+<h1>PRÁCTICA 4 – Plantilla de algoritmo BaB para TSP</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Tabla de contenidos</div>
 <ul class="sectlevel1">
-<li><a href="#_objetivos">Objetivos</a></li>
-<li><a href="#_método_main_con_argumentos">Método <code>main</code> con argumentos</a>
-<ul class="sectlevel2">
-<li><a href="#_ejecución_con_eclipse">Ejecución con Eclipse</a></li>
-<li><a href="#_ejecución_desde_el_terminal">Ejecución desde el terminal</a></li>
-</ul>
-</li>
-<li><a href="#_argumentos_en_práctica_4">Argumentos en Práctica 4</a></li>
+<li><a href="#_plantilla_de_implementación_en_java">Plantilla de implementación en Java</a></li>
+<li><a href="#_otras_clases_necesarias">Otras clases necesarias</a></li>
 </ul>
 </div>
 </div>
@@ -682,171 +676,166 @@ pre.rouge {
 </div>
 </div>
 <div class="sect1">
-<h2 id="_objetivos">Objetivos</h2>
+<h2 id="_plantilla_de_implementación_en_java">Plantilla de implementación en Java</h2>
 <div class="sectionbody">
-<div class="exampleblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Describir en Java el diseño del programa principal (<code>main</code>) con argumentos en la llamada</p>
-</li>
-<li>
-<p>Mostrar ejemplos de llamada al programa principal en la Práctica 4</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>A continuación tenéis un esquema o plantlla de la implementación del algoritmo <strong><em>branch-and-bound</em></strong> para el problema del TSP en un grafo representado por <em>un mapa de adyacencia</em>. Se trata de que completéis los bloques que faltan, marcados como comentarios dentro del código.</p>
 </div>
+<div class="listingblock">
+<div class="content">
+<pre class="rouge highlight"><code data-lang="java">	<span class="c1">// return the minimum value of the edges</span>
+  	<span class="kd">public</span> <span class="kt">double</span> <span class="nf">minimumEdgeValue</span><span class="o">()</span> <span class="o">{</span>
+  		<span class="kt">double</span> <span class="n">minimum</span> <span class="o">=</span> <span class="nc">Double</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
+  		<span class="c1">// Devuelve el menor valor de arista del grafo</span>
+  		<span class="c1">// Dos bucles 'for' anidados</span>
+
+
+  		<span class="k">return</span> <span class="n">minimum</span><span class="o">;</span>
+  	<span class="o">}</span>
+
+  	<span class="c1">// TSP - BaB - Best-First</span>
+	<span class="kd">public</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Vertex</span><span class="o">&gt;</span> <span class="nf">TSPBaB</span><span class="o">(</span><span class="nc">Vertex</span> <span class="n">source</span><span class="o">)</span> <span class="o">{</span>
+		<span class="nc">TreeMap</span><span class="o">&lt;</span><span class="nc">Vertex</span><span class="o">,</span> <span class="nc">Double</span><span class="o">&gt;</span> <span class="n">neighborMap</span> <span class="o">=</span> <span class="n">adjacencyMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">source</span><span class="o">);</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">neighborMap</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span>
+			<span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+
+		<span class="n">minEdgeValue</span> <span class="o">=</span> <span class="n">minimumEdgeValue</span><span class="o">();</span>
+
+		<span class="c1">// Constructor de clase PathNode</span>
+		<span class="nc">PathNode</span> <span class="n">firstNode</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PathNode</span><span class="o">(</span><span class="n">source</span><span class="o">);</span>
+
+		<span class="nc">PriorityQueue</span><span class="o">&lt;</span><span class="nc">PathNode</span><span class="o">&gt;</span> <span class="n">priorityQueue</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PriorityQueue</span><span class="o">&lt;&gt;();</span>
+
+		<span class="n">priorityQueue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">firstNode</span><span class="o">);</span>
+
+		<span class="n">shortestCircuit</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+		<span class="kt">double</span> <span class="n">bestCost</span> <span class="o">=</span> <span class="nc">Double</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
+
+		<span class="k">while</span><span class="o">(</span><span class="n">priorityQueue</span><span class="o">.</span><span class="na">size</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+
+			<span class="c1">// Y (PathNode) = menorElemento de la cola de prioridad en funcion de 'estimatedCost'</span>
+			<span class="nc">PathNode</span> <span class="no">Y</span> <span class="o">=</span> <span class="n">priorityQueue</span><span class="o">.</span><span class="na">poll</span><span class="o">();</span>
+
+			<span class="k">if</span> <span class="o">(</span><span class="no">Y</span><span class="o">.</span><span class="na">getEstimatedCost</span><span class="o">()</span> <span class="o">&gt;=</span> <span class="n">bestCost</span><span class="o">)</span>
+                <span class="k">break</span><span class="o">;</span>
+			<span class="k">else</span> <span class="o">{</span>
+				<span class="nc">Vertex</span> <span class="n">from</span> <span class="o">=</span> <span class="no">Y</span><span class="o">.</span><span class="na">lastVertexRes</span><span class="o">();</span>
+				<span class="c1">// Si el numero de vertices visitados es n</span>
+				<span class="c1">// y existe una arista que conecte 'from' con source</span>
+				<span class="k">if</span> <span class="o">((</span><span class="no">Y</span><span class="o">.</span><span class="na">getVisitedVertices</span><span class="o">()</span> <span class="o">==</span> <span class="n">numberOfVertices</span><span class="o">())</span> <span class="o">&amp;&amp;</span>
+					<span class="o">(</span><span class="n">containsEdge</span><span class="o">(</span><span class="n">from</span><span class="o">,</span> <span class="n">source</span><span class="o">)))</span> <span class="o">{</span>
+					<span class="c1">// Actualizar 'res' en Y añadiendo el vertice 'source'</span>
+					<span class="c1">// Actualizar 'totalCost' en Y con Y.totalCost + weight(from, source)</span>
+
+					<span class="k">if</span> <span class="o">(</span><span class="no">Y</span><span class="o">.</span><span class="na">getTotalCost</span><span class="o">()</span> <span class="o">&lt;</span> <span class="n">bestCost</span><span class="o">)</span> <span class="o">{</span>
+						<span class="c1">// Actualizar 'bestCost', 'shortestDistanceCircuit' y 'shortestCircuit'</span>
+
+					<span class="o">}</span>
+				<span class="o">}</span>
+				<span class="k">else</span> <span class="o">{</span>
+					<span class="c1">// Iterar para todos los vertices adyacentes a from,</span>
+					<span class="c1">// a cada vertice lo denominamos 'to'</span>
+
+						<span class="k">if</span> <span class="o">(</span><span class="n">vertice</span> <span class="err">'</span><span class="n">to</span><span class="err">'</span> <span class="n">todavia</span> <span class="n">no</span> <span class="n">ha</span> <span class="n">sido</span> <span class="n">visitado</span> <span class="n">en</span> <span class="no">Y</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// hacer uso de la funcion 'isVertexVisited(vertex)' de PathNode</span>
+
+
+							<span class="nc">PathNode</span> <span class="no">X</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">PathNode</span><span class="o">(</span><span class="no">Y</span><span class="o">);</span> <span class="c1">// Uso de constructor copia</span>
+							<span class="c1">// Anadir 'to' a 'res' en X</span>
+							<span class="c1">// Incrementar en 1 los vertices visitados en X</span>
+							<span class="c1">// Actualizar 'totalCost' en X con Y.totalCost + weight(from, to)</span>
+
+							<span class="c1">// Actualizar 'estimatedCost' en X con X.totalCost + ((nVertices - X.getVisitedVertices() + 1) * minEdgeValue)</span>
+
+
+							<span class="k">if</span> <span class="o">(</span><span class="no">X</span><span class="o">.</span><span class="na">getEstimatedCost</span><span class="o">()</span> <span class="o">&lt;</span> <span class="n">bestCost</span><span class="o">)</span> <span class="o">{</span>
+								<span class="n">priorityQueue</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="no">X</span><span class="o">);</span>
+							<span class="o">}</span>
+						<span class="o">}</span>
+					<span class="o">}</span>
+				<span class="o">}</span>
+			<span class="o">}</span>
+		<span class="o">}</span>
+
+		<span class="k">return</span> <span class="n">shortestCircuit</span><span class="o">;</span>
+	<span class="o">}</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_método_main_con_argumentos">Método <code>main</code> con argumentos</h2>
+<h2 id="_otras_clases_necesarias">Otras clases necesarias</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Para la ejecución de los algoritmos, y con el objetivo de facilitar la ejecución de los distintos algoritmos implementados sobre los distintos archivos de datos <strong>sin tener que modificar el código fuente</strong>, se muestra cómo diseñar el método principal (<code>main</code>) para que permita recibir argumentos, separados por espacios en blanco. Para ello, se usará el parámetro <code>args</code> en la llamada a <code>main</code>, como en el siguiente ejemplo:</p>
+<p>Además, necesitaréis la clase <code>PathNode.java</code></p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">org.ualeda2.mainWithArguments</span><span class="o">;</span>
+<pre class="rouge highlight"><code data-lang="java"><span class="kd">protected</span> <span class="kd">class</span> <span class="nc">PathNode</span> <span class="kd">implements</span> <span class="nc">Comparable</span><span class="o">&lt;</span><span class="nc">PathNode</span><span class="o">&gt;</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Vertex</span><span class="o">&gt;</span> <span class="n">res</span><span class="o">;</span> <span class="c1">// result</span>
+    <span class="kd">private</span> <span class="kt">int</span> <span class="n">visitedVertices</span><span class="o">;</span> <span class="c1">// The number of the visited vertices</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">totalCost</span><span class="o">;</span> <span class="c1">// The total cost of the path taken so far</span>
+    <span class="kd">private</span> <span class="kt">double</span> <span class="n">estimatedCost</span><span class="o">;</span> <span class="c1">// Representing the lower bound of this state. <strong>*</strong> Priority</span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainWithArguments</span> <span class="o">{</span>
+    <span class="nc">PathNode</span><span class="o">(</span><span class="nc">Vertex</span> <span class="n">vertexToVisit</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">res</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Vertex</span><span class="o">&gt;();</span>
+        <span class="n">res</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">vertexToVisit</span><span class="o">);</span>
+        <span class="n">visitedVertices</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="n">totalCost</span> <span class="o">=</span> <span class="mf">0.0</span><span class="o">;</span>
+        <span class="n">estimatedCost</span> <span class="o">=</span> <span class="n">numberOfVertices</span><span class="o">()</span> <span class="o">*</span> <span class="n">minEdgeValue</span><span class="o">;</span>
+    <span class="o">}</span>
 
-	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-		<span class="c1">// TODO Auto-generated method stub</span>
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The number of arguments is: "</span><span class="o">+</span><span class="n">args</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
-		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Your first argument is: "</span><span class="o">+</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
-        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Your second argument is: "</span><span class="o">+</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
+    <span class="nc">PathNode</span><span class="o">(</span><span class="nc">PathNode</span> <span class="n">parentPathNode</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// Constructor copia</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">compareTo</span><span class="o">(</span><span class="nc">PathNode</span> <span class="n">p</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// El criterio de comparacion es 'estimatedCost' que se correponde con la prioridad</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="nc">Vertex</span><span class="o">&gt;</span> <span class="nf">getRes</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addVertexRes</span><span class="o">(</span><span class="nc">Vertex</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">res</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">v</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">Vertex</span> <span class="nf">lastVertexRes</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">// Devuelve el ultimo vertice que se ha anadido al camino (ultimo elemento de 'res')</span>
 
 	<span class="o">}</span>
 
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isVertexVisited</span><span class="o">(</span><span class="nc">Vertex</span> <span class="n">v</span><span class="o">)</span> <span class="o">{</span>
+    	<span class="c1">// Se ha visitado el vertice v si esta actualmente en 'res'. Una sola linea</span>
+
+	<span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getVisitedVertices</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">visitedVertices</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setVisitedVertices</span><span class="o">(</span><span class="kt">int</span> <span class="n">visitedVertices</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">visitedVertices</span> <span class="o">=</span> <span class="n">visitedVertices</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getTotalCost</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">totalCost</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setTotalCost</span><span class="o">(</span><span class="kt">double</span> <span class="n">totalCost</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">totalCost</span> <span class="o">=</span> <span class="n">totalCost</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">double</span> <span class="nf">getEstimatedCost</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">estimatedCost</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setEstimatedCost</span><span class="o">(</span><span class="kt">double</span> <span class="n">estimatedCost</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">estimatedCost</span> <span class="o">=</span> <span class="n">estimatedCost</span><span class="o">;</span>
+    <span class="o">}</span>
 <span class="o">}</span></code></pre>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_ejecución_con_eclipse">Ejecución con Eclipse</h3>
-<div class="paragraph">
-<p>Para ejecutar en Eclipse, como siembre, sobre la clase Java, botón derecho, <em>Run as&#8230;&#8203;, Java Application</em>:</p>
-</div>
-<div id="fig-runasjava" class="imageblock text-center">
-<div class="content">
-<img src="modules/ROOT/images/runAsJava.png" alt="Run as&#8230;&#8203; Java Application" width="540">
-</div>
-<div class="title">Figura 1. Run as&#8230;&#8203; Java Application</div>
-</div>
-<div class="paragraph">
-<p>La salida por consola mostrará la excepción <code>ArrayIndexOutOfBoundsException</code> cuando intenta acceder a <code>args[0]</code>, porque no hemos añadido argumentos en la llamada.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="rouge highlight"><code>The number of arguments is: 0
-<strong>Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
-	at org.ualeda2.mainWithArguments.MainWithArguments.main(MainWithArguments.java:8)</strong></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Para añadir argumentos, menú <em>Run, Run Configurations</em>. A continuación, buscamos la configuración de ejecución de <code>MainWithArguments</code>, y editamos la pestaña <code>Arguments</code>:</p>
-</div>
-<div id="fig-runconfigurations" class="imageblock text-center">
-<div class="content">
-<img src="modules/ROOT/images/runConfigurations.png" alt="Run Configurations with Arguments" width="640">
-</div>
-<div class="title">Figura 2. Run Configurations with Arguments</div>
-</div>
-<div class="paragraph">
-<p>Volvemos a ejecutar, y ahora la ejecución será correcta.</p>
-</div>
-<div id="fig-consoleArgumentsOk" class="imageblock text-center">
-<div class="content">
-<img src="modules/ROOT/images/consoleArgumentsOk.png" alt="Salida por consola correcta" width="640">
-</div>
-<div class="title">Figura 3. Salida por consola correcta</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_ejecución_desde_el_terminal">Ejecución desde el terminal</h3>
-<div class="paragraph">
-<p>Otra alternativa para ejecutar nuestra aplicación con argumentos es llamarla desde el terminal.  Abre el terminal como una vista dentro de Eclipse: sobre la clase Java, botón derecho, <em>Show in local terminal, Terminal</em>.</p>
-</div>
-<div class="paragraph">
-<p>Y en el terminal llama a tu programa con:</p>
-</div>
-<div class="paragraph">
-<p><code>java MainWithArguments.java TSP graphEDAlandTSP.txt</code></p>
-</div>
-<div id="fig-consoleArgumentsOk" class="imageblock text-center">
-<div class="content">
-<img src="modules/ROOT/images/consoleCallJava.png" alt="Llamada al programa Java desde consola con argumentos" width="840">
-</div>
-<div class="title">Figura 4. Llamada al programa Java desde consola con argumentos</div>
-</div>
-<div class="paragraph">
-<p>Esta es la <em>opción recomendada</em>, ya que te permite escribir los argumentos facilmente, y usar las flechas arriba y abajo para repetir comandos previos.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_argumentos_en_práctica_4">Argumentos en Práctica 4</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Los argumentos que debe permitir en la llamada al programa principal son:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Primer argumento: <code>algoritmo</code> a ejecutar (ejemplos: <code>TSP_distance</code>, <code>HamiltonianCycles</code>, <code>Backtraking</code>, <code>BandB</code>, ¿otros?&#8230;&#8203;)</p>
-</li>
-<li>
-<p>Segundo argumento: <code>carpeta/archivoDeDatos.txt</code> (es recomendable que acepte <em>rutas relativas, no absolutas</em>)</p>
-</li>
-<li>
-<p>Tercer argumento (<em>opcional</em>): <code>vérticeDePartida</code></p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Ejemplos de llamadas en la práctica 4</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><strong>Caso 1</strong> del <em>Trabajo a desarrollar</em>: (<strong><em>Backtracking</em></strong>)  <em>todos los posibles circuitos partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland. Si hubiera más de uno, indique entre todos ellos el cirtuito de menor distancia.</em>
-Argumentos:</p>
-<div class="literalblock">
-<div class="content">
-<pre>TSP_Backtraking dataset/graphEDAlandTSP.txt Almeria</pre>
-</div>
-</div>
-</li>
-<li>
-<p><strong>Caso 2</strong> del <em>Trabajo a desarrollar</em>: (<strong><em>Branch-and-Bound</em></strong>)  <em>Determinar un circuito que, partiendo desde Almería, visite cada ciudad exactamente una vez, regresando a Almería y habiendo recorrido en total la menor distancia posible. Resolver este problema para la nueva red reducida de carreteras de EDAland.</em>
-Argumentos:</p>
-<div class="literalblock">
-<div class="content">
-<pre>TSP_BaB dataset/graphEDAlandTSP.txt Almeria</pre>
-</div>
-</div>
-</li>
-<li>
-<p><strong>Caso 3</strong> del <em>Trabajo a desarrollar</em>: <em>obtener el circuito en la red nacional de carreteras completa, partiendo de un núcleo urbano cualquiera, que visite cada población exactamente una vez, regrese al núcleo de partida y tenga la menor distancia posible.</em>
-Argumentos:</p>
-<div class="literalblock">
-<div class="content">
-<pre>TSP_Backtraking dataset/graphEDAlandLarge.txt numVertice</pre>
-</div>
-</div>
-</li>
-<li>
-<p><strong>Caso 4</strong> del <em>Trabajo a desarrollar</em>:
-Argumentos (ejemplo):</p>
-<div class="literalblock">
-<div class="content">
-<pre>TSP_BaB dataset/graphEDAlandLarge.txt numVertice</pre>
-</div>
-</div>
-</li>
-</ol>
 </div>
 </div>
 </div>

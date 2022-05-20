@@ -55,7 +55,7 @@ image::runAsJava.png[Run as... Java Application,width=540,pdfwidth=50%,align="ce
 
 La salida por consola mostrará la excepción `ArrayIndexOutOfBoundsException` cuando intenta acceder a `args[0]`, porque no hemos añadido argumentos en la llamada.
 
-[source,xml,subs="verbatim,quotes"]
+[source,subs="quotes"]
 ----
 The number of arguments is: 0
 *Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
@@ -98,7 +98,7 @@ Los argumentos que debe permitir en la llamada al programa principal son:
 
 *Ejemplos de llamadas en la práctica 4*
 
-. *Caso 1* del _Trabajo a desarrollar_: (*_Backtracking_*)  _ todos los posibles circuitos partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland. Si hubiera más de uno, indique entre todos ellos el cirtuito de menor distancia._
+. *Caso 1* del _Trabajo a desarrollar_: (*_Backtracking_*)  _todos los posibles circuitos partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland. Si hubiera más de uno, indique entre todos ellos el cirtuito de menor distancia._
 Argumentos: 
 
  TSP_Backtraking dataset/graphEDAlandTSP.txt Almeria
