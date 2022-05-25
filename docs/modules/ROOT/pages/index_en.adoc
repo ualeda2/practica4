@@ -105,6 +105,23 @@ The defense of the code and memory by the teacher may be required.
 
 Deadline: *June 5th 2022*
 
+== Results (_New_)
+
+Running the algorithms on the *new reduced network of roads* of EDAland (link:#fig1[Figure 1]) should give *34 paths* (circuits). The following example shows 3 of the 34 resulting circuits. The shortest one must be highlithed at the end: 
+
+[source]
+----
+Almeria - Granada - Cadiz - Huelva - Sevilla - Jaen - Badajoz - Caceres - Madrid - Valladolid - Vigo - Corunya - Oviedo - Bilbao - Lerida - Gerona - Barcelona - Zaragoza - Valencia - Albacete - Murcia - Almeria  ==> 4999.0
+Almeria - Granada - Cadiz - Huelva - Sevilla - Jaen - Badajoz - Caceres - Valladolid - Vigo - Corunya - Oviedo - Bilbao - Lerida - Gerona - Barcelona - Valencia - Zaragoza - Madrid - Albacete - Murcia - Almeria  ==> 5271.0
+Almeria - Granada - Cadiz - Huelva - Sevilla - Jaen - Badajoz - Caceres - Valladolid - Vigo - Corunya - Oviedo - Bilbao - Lerida - Gerona - Barcelona - Zaragoza - Madrid - Albacete - Valencia - Murcia - Almeria  ==> 5192.0
+...
+...
+Number of circuits: 34
+
+Shortest circuit: 
+Almeria - .... ==> ... 
+----
+
 [bibliography]
 == References
 
