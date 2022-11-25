@@ -72,6 +72,188 @@ Para ello deberá realizar los siguientes apartados:
 
 * *Estudio experimental*: Validación de los algoritmos de *_backtracking_* y *_branch-and-bound_* implementados sobre las redes de EDAland proporcionadas. Para ello, se deberán obtener y comparar los tiempos de ejecución de los algoritmos implementados. 
 
+
+== Aproximación a la solución 
+
+=== Plantilla de implementación
+
+A continuación tenéis un esquema o plantilla de la implementación del algoritmo *_branch-and-bound_* para el problema del TSP en un grafo representado por _un mapa de adyacencia_. Se trata de que completéis los bloques que faltan, marcados como comentarios dentro del código. 
+
+[source,java,subs="verbatim,quotes"]
+----
+	// return the minimum value of the edges
+  	public double minimumEdgeValue() {
+  		double minimum = Double.MAX_VALUE;
+  		// Devuelve el menor valor de arista del grafo
+  		// Dos bucles 'for' anidados
+
+
+  		return minimum;
+  	}
+	
+  	// TSP - BaB - Best-First
+	public ArrayList<Vertex> TSPBaB(Vertex source) {		
+		TreeMap<Vertex, Double> neighborMap = adjacencyMap.get(source);
+		if (neighborMap == null)
+			return null;
+
+		minEdgeValue = minimumEdgeValue();
+
+		// Constructor de clase PathNode
+		PathNode firstNode = new PathNode(source);
+				
+		PriorityQueue<PathNode> priorityQueue = new PriorityQueue<>();
+		
+		priorityQueue.add(firstNode);
+		
+		shortestCircuit = null;
+		double bestCost = Double.MAX_VALUE;
+		
+		while(priorityQueue.size() > 0) {
+			
+			// Y (PathNode) = menorElemento de la cola de prioridad en funcion de 'estimatedCost'
+			PathNode Y = priorityQueue.poll();
+			
+			if (Y.getEstimatedCost() >= bestCost)
+                break;
+			else {
+				Vertex from = Y.lastVertexRes();
+				// Si el numero de vertices visitados es n 
+				// y existe una arista que conecte 'from' con source
+				if ((Y.getVisitedVertices() == numberOfVertices()) && 
+					(containsEdge(from, source))) {
+					// Actualizar 'res' en Y añadiendo el vertice 'source'
+					// Actualizar 'totalCost' en Y con Y.totalCost + weight(from, source)
+										   
+					if (Y.getTotalCost() < bestCost) {
+						// Actualizar 'bestCost', 'shortestDistanceCircuit' y 'shortestCircuit'
+														  
+					}
+				}
+				else {
+					// Iterar para todos los vertices adyacentes a from, 
+					// a cada vertice lo denominamos 'to' 
+
+						if (vertice 'to' todavia no ha sido visitado en Y) { // hacer uso de la funcion 'isVertexVisited(vertex)' de PathNode
+								 
+								   
+							PathNode X = new PathNode(Y); // Uso de constructor copia
+							// Anadir 'to' a 'res' en X
+							// Incrementar en 1 los vertices visitados en X
+							// Actualizar 'totalCost' en X con Y.totalCost + weight(from, to)
+										
+							// Actualizar 'estimatedCost' en X con X.totalCost + ((nVertices - X.getVisitedVertices() + 1) * minEdgeValue)
+												
+						
+							if (X.getEstimatedCost() < bestCost) {
+								priorityQueue.add(X);
+							}
+						}
+					}
+				}
+			}
+		}
+		 
+		return shortestCircuit;
+	}
+
+----
+
+=== Otras clases necesarias
+
+Además, necesitaréis la clase `PathNode.java`
+
+[source,java,subs="verbatim,quotes"]
+----
+protected class PathNode implements Comparable<PathNode> {
+    private ArrayList<Vertex> res; // result
+    private int visitedVertices; // The number of the visited vertices
+    private double totalCost; // The total cost of the path taken so far
+    private double estimatedCost; // Representing the lower bound of this state. *** Priority
+
+    PathNode(Vertex vertexToVisit) {
+        res = new ArrayList<Vertex>();
+        res.add(vertexToVisit);
+        visitedVertices = 1;
+        totalCost = 0.0;
+        estimatedCost = numberOfVertices() * minEdgeValue;
+    }
+
+    PathNode(PathNode parentPathNode) {
+        // Constructor copia
+    }
+
+    @Override
+    public int compareTo(PathNode p) {
+        // El criterio de comparacion es 'estimatedCost' que se correponde con la prioridad
+    }
+
+    public ArrayList<Vertex> getRes() {
+        return res;
+    }
+
+    public void addVertexRes(Vertex v) {
+        this.res.add(v);
+    }
+
+    public Vertex lastVertexRes() {
+        // Devuelve el ultimo vertice que se ha anadido al camino (ultimo elemento de 'res')
+    
+	}
+
+    public boolean isVertexVisited(Vertex v) {
+    	// Se ha visitado el vertice v si esta actualmente en 'res'. Una sola linea
+    
+	}
+
+    public int getVisitedVertices() {
+        return visitedVertices;
+    }
+
+    public void setVisitedVertices(int visitedVertices) {
+        this.visitedVertices = visitedVertices;
+    }
+		
+    public double getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
+    }
+
+    public double getEstimatedCost() {
+        return estimatedCost;
+    }
+
+    public void setEstimatedCost(double estimatedCost) {
+        this.estimatedCost = estimatedCost;
+    }
+}
+----
+
+=== Método `main` con argumentos
+
+Para la ejecución de los algoritmos, y con el objetivo de facilitar la ejecución de los distintos algoritmos implementados sobre los distintos archivos de datos *sin tener que modificar el código fuente*, se muestra cómo diseñar el método principal (`main`) para que permita recibir argumentos, separados por espacios en blanco. Para ello, se usará el parámetro `args` en la llamada a `main`, como en el siguiente ejemplo:
+
+[source,java,subs="verbatim,quotes"]
+----
+package org.ualeda2.mainWithArguments;
+
+public class MainWithArguments {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("The number of arguments is: "+args.length);
+		System.out.println("Your first argument is: "+args[0]);  
+        System.out.println("Your second argument is: "+args[1]);  
+
+	}
+
+}
+----
+
+
 == Entregas
 
 Se ha de entregar, en fecha, en el repositorio https://docs.github.com/es/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#[privado] de GitHub para todas las prácticas de la asignatura con acceso para el/los profesor/es que evalúa/n las prácticas (mismo repositorio para todas las prácticas de EDA II), con la documentación y el código fuente requerido en la práctica:
