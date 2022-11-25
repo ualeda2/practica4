@@ -437,223 +437,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-pre.rouge table td { padding: 5px; }
-pre.rouge table pre { margin: 0; }
-pre.rouge .cm {
-  color: #999988;
-  font-style: italic;
-}
-pre.rouge .cp {
-  color: #999999;
-  font-weight: bold;
-}
-pre.rouge .c1 {
-  color: #999988;
-  font-style: italic;
-}
-pre.rouge .cs {
-  color: #999999;
-  font-weight: bold;
-  font-style: italic;
-}
-pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
-  color: #999988;
-  font-style: italic;
-}
-pre.rouge .err {
-  color: #a61717;
-  background-color: #e3d2d2;
-}
-pre.rouge .gd {
-  color: #000000;
-  background-color: #ffdddd;
-}
-pre.rouge .ge {
-  color: #000000;
-  font-style: italic;
-}
-pre.rouge .gr {
-  color: #aa0000;
-}
-pre.rouge .gh {
-  color: #999999;
-}
-pre.rouge .gi {
-  color: #000000;
-  background-color: #ddffdd;
-}
-pre.rouge .go {
-  color: #888888;
-}
-pre.rouge .gp {
-  color: #555555;
-}
-pre.rouge .gs {
-  font-weight: bold;
-}
-pre.rouge .gu {
-  color: #aaaaaa;
-}
-pre.rouge .gt {
-  color: #aa0000;
-}
-pre.rouge .kc {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kd {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kn {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kp {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kr {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .kt {
-  color: #445588;
-  font-weight: bold;
-}
-pre.rouge .k, pre.rouge .kv {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .mf {
-  color: #009999;
-}
-pre.rouge .mh {
-  color: #009999;
-}
-pre.rouge .il {
-  color: #009999;
-}
-pre.rouge .mi {
-  color: #009999;
-}
-pre.rouge .mo {
-  color: #009999;
-}
-pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
-  color: #009999;
-}
-pre.rouge .sa {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .sb {
-  color: #d14;
-}
-pre.rouge .sc {
-  color: #d14;
-}
-pre.rouge .sd {
-  color: #d14;
-}
-pre.rouge .s2 {
-  color: #d14;
-}
-pre.rouge .se {
-  color: #d14;
-}
-pre.rouge .sh {
-  color: #d14;
-}
-pre.rouge .si {
-  color: #d14;
-}
-pre.rouge .sx {
-  color: #d14;
-}
-pre.rouge .sr {
-  color: #009926;
-}
-pre.rouge .s1 {
-  color: #d14;
-}
-pre.rouge .ss {
-  color: #990073;
-}
-pre.rouge .s, pre.rouge .dl {
-  color: #d14;
-}
-pre.rouge .na {
-  color: #008080;
-}
-pre.rouge .bp {
-  color: #999999;
-}
-pre.rouge .nb {
-  color: #0086B3;
-}
-pre.rouge .nc {
-  color: #445588;
-  font-weight: bold;
-}
-pre.rouge .no {
-  color: #008080;
-}
-pre.rouge .nd {
-  color: #3c5d5d;
-  font-weight: bold;
-}
-pre.rouge .ni {
-  color: #800080;
-}
-pre.rouge .ne {
-  color: #990000;
-  font-weight: bold;
-}
-pre.rouge .nf, pre.rouge .fm {
-  color: #990000;
-  font-weight: bold;
-}
-pre.rouge .nl {
-  color: #990000;
-  font-weight: bold;
-}
-pre.rouge .nn {
-  color: #555555;
-}
-pre.rouge .nt {
-  color: #000080;
-}
-pre.rouge .vc {
-  color: #008080;
-}
-pre.rouge .vg {
-  color: #008080;
-}
-pre.rouge .vi {
-  color: #008080;
-}
-pre.rouge .nv, pre.rouge .vm {
-  color: #008080;
-}
-pre.rouge .ow {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .o {
-  color: #000000;
-  font-weight: bold;
-}
-pre.rouge .w {
-  color: #bbbbbb;
-}
-pre.rouge {
-  background-color: #f8f8f8;
-}
-</style>
 </head>
-<body class="article toc2 toc-right text-justify">
+<body class="article toc2 toc-right text-justify data-line-1">
 <div id="header">
 <h1>PRÁCTICA 4 – Backtracking y Branch-and-Bound. Un repartidor muy eficaz (Versión reducida)</h1>
 <div id="toc" class="toc2">
@@ -663,6 +448,13 @@ pre.rouge {
 <li><a href="#_requerimientos">Requerimientos</a></li>
 <li><a href="#_enunciado_del_problema">Enunciado del problema</a></li>
 <li><a href="#_trabajo_a_desarrollar">Trabajo a desarrollar</a></li>
+<li><a href="#_aproximación_a_la_solución">Aproximación a la solución</a>
+<ul class="sectlevel2">
+<li><a href="#_plantilla_de_implementación_en_java">Plantilla de implementación en Java</a></li>
+<li><a href="#_otras_clases_necesarias">Otras clases necesarias</a></li>
+<li><a href="#_método_main_con_argumentos">Método <code>main</code> con argumentos</a></li>
+</ul>
+</li>
 <li><a href="#_entregas">Entregas</a></li>
 <li><a href="#_evaluación">Evaluación</a></li>
 <li><a href="#_fecha_de_entrega">Fecha de entrega</a></li>
@@ -674,25 +466,25 @@ pre.rouge {
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph">
+<div class="paragraph data-line-13">
 <p>Estructuras de datos y Algoritmos II (EDA II). 2º Grado en Ingeniería Informática. Universidad de Almería</p>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-15">
 <p><em>Version</em> <strong>curso.2022</strong> - reducida</p>
 </div>
 </div>
 </div>
-<div class="sect1">
+<div class="sect1 data-line-21">
 <h2 id="_objetivos">Objetivos</h2>
 <div class="sectionbody">
-<div class="exampleblock">
+<div class="exampleblock data-line-22">
 <div class="content">
-<div class="ulist">
+<div class="ulist data-line-23">
 <ul>
-<li>
+<li class="data-line-23">
 <p>Construir soluciones a un problema utilizando los <strong>métodos algorítmicos <em>backtracking</em></strong> (vuelta atrás) y <strong><em>branch-and-bound</em></strong> (ramificación y poda). Analizar y comparar los algoritmos implementados desde diferentes perspectivas.</p>
 </li>
-<li>
+<li class="data-line-24">
 <p>Realizar el <strong>análisis de la eficiencia</strong> de las soluciones aportadas, y una comparativa tanto desde el punto de vista teórico como práctico.</p>
 </li>
 </ul>
@@ -701,46 +493,46 @@ pre.rouge {
 </div>
 </div>
 </div>
-<div class="sect1">
+<div class="sect1 data-line-27">
 <h2 id="_requerimientos">Requerimientos</h2>
 <div class="sectionbody">
-<div class="paragraph">
+<div class="paragraph data-line-29">
 <p>Para superar esta práctica se debe realizar lo siguiente:</p>
 </div>
-<div class="ulist">
+<div class="ulist data-line-31">
 <ul>
-<li>
+<li class="data-line-31">
 <p>Recordar (de EDA I) las <strong>estructuras de datos</strong> más apropiadas para la resolución de problemas.</p>
 </li>
-<li>
+<li class="data-line-32">
 <p>Conocer cómo implementar los esquemas algorítmicos <strong><em>backtracking</em></strong> y <strong><em>branch-and-bound</em></strong> para responder a una necesidad concreta (en este caso, resolver el problema del viajante de comercio y de ciclos hamiltonianos).</p>
 </li>
-<li>
+<li class="data-line-33">
 <p><strong>Evaluar los algoritmos implementados</strong> siguiendo los métodos <strong><em>backtracking</em></strong> y <strong><em>branch-and-bound</em></strong>, relacionando ambos métodos algorítmicos.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect1">
+<div class="sect1 data-line-35">
 <h2 id="_enunciado_del_problema">Enunciado del problema</h2>
 <div class="sectionbody">
-<div class="paragraph">
+<div class="paragraph data-line-37">
 <p>Como sabemos, en EDAland existen ciudadanos muy característicos, entre ellos, nos encontramos a ‘Braulio el repartidor’, un trabajador incansable y responsable de Almería que lleva toda una vida repartiendo los periódicos del Hoy-Almeria por todo el país. Todas las madrugadas, cuando la editorial del Hoy-Almeria cierra el diario y salen los primeros ejemplares de la imprenta, Braulio está ahí, con su furgoneta, listo para repartirlos entre todas las ciudades de EDAland. Además de por su eficacia repartiendo, Braulio también destaca por ser una persona que tiene muy en cuenta su economía, y siempre procura escoger el circuito que le suponga recorrer la distancia más corta posible o realizar el menor gasto de combustible (y más ahora, al elevado precio que está) posible. Para ser tan eficaz, el bueno de Braulio se planteó tres cuestiones importantes. La primera consistía en conocer todos los posibles circuitos, partiendo desde Almería, que recorren cada ciudad, donde debe dejar un lote de periódicos, exactamente una vez y regresando posteriormente a Almería. La segunda cuestión consistía en determinar un circuito que recorra cada ciudad exactamente una vez, partiendo y regresando a Almería, y habiendo recorrido en total la menor distancia posible. La tercera y última cuestión consistía en determinar un circuito que recorra cada ciudad exactamente una vez, saliendo y volviendo a Almería y cuyo gasto en combustible sea el mínimo posible.</p>
 </div>
-<div class="paragraph">
-<p>Para poder dar respuesta a las cuestiones que se plantea Braulio disponemos de la <em>nueva red reducida de carreteras</em> de EDAland (<a href="#fig1">Figura 1</a>). En EDAland se llevó a cabo un nuevo plan general de carreteras y se añadieron algunas nuevas vías (en <span class="aqua">azul</span>) a la red anterior (práctica 2). Como podemos observar, ésta conecta a las grandes ciudades del país (21 ciudades con 41 carreteras), junto con la distancia en kilómetros entre dos ciudades. Por ejemplo, la distancia que conecta Almería con Granada es de 173 kilómetros. Esta red nos servirá para verificar el correcto funcionamiento de los algoritmos <em>backtracking</em> y <em>branch-and-bound</em> desarrollados.</p>
+<div class="paragraph data-line-39">
+<p>Para poder dar respuesta a las cuestiones que se plantea Braulio disponemos de la <em>nueva red reducida de carreteras</em> de EDAland (<a href="#fig1" data-href="#fig1">Figura 1</a>). En EDAland se llevó a cabo un nuevo plan general de carreteras y se añadieron algunas nuevas vías (en <span class="aqua">azul</span>) a la red anterior (práctica 2). Como podemos observar, ésta conecta a las grandes ciudades del país (21 ciudades con 41 carreteras), junto con la distancia en kilómetros entre dos ciudades. Por ejemplo, la distancia que conecta Almería con Granada es de 173 kilómetros. Esta red nos servirá para verificar el correcto funcionamiento de los algoritmos <em>backtracking</em> y <em>branch-and-bound</em> desarrollados.</p>
 </div>
-<div id="fig1" class="imageblock text-center">
+<div id="fig1" class="imageblock text-center data-line-44">
 <div class="content">
 <img src="modules/ROOT/images/pr4-fig1.png" alt="Nueva red reducida de carreteras de EDAland" width="640">
 </div>
 <div class="title">Figura 1. Nueva red reducida de carreteras de EDAland</div>
 </div>
-<div class="paragraph">
-<p>Una vez comprobado el correcto funcionamiento de nuestros algoritmos en la red reducida de caminos, analizaremos nuestros algoritmos en la <strong>red nacional de carreteras</strong> de EDALand (<a href="#fig2">Figura 2</a>, adaptado del grafo de ciudades y carreteras de <a href="#gines-mapa">[1]</a>), que conecta a todos los núcleos de población del país (1053 núcleos de población con 2017 carreteras con la distancia que hay entre dos poblaciones). Ésta es la misma red de la práctica 2.</p>
+<div class="paragraph data-line-46">
+<p>Una vez comprobado el correcto funcionamiento de nuestros algoritmos en la red reducida de caminos, analizaremos nuestros algoritmos en la <strong>red nacional de carreteras</strong> de EDALand (<a href="#fig2" data-href="#fig2">Figura 2</a>, adaptado del grafo de ciudades y carreteras de <a href="#gines-mapa">[1]</a>), que conecta a todos los núcleos de población del país (1053 núcleos de población con 2017 carreteras con la distancia que hay entre dos poblaciones). Ésta es la misma red de la práctica 2.</p>
 </div>
-<div id="fig2" class="imageblock text-center">
+<div id="fig2" class="imageblock text-center data-line-50">
 <div class="content">
 <img src="modules/ROOT/images/pr2-fig2.png" alt="Red nacional de caminos de EDAland" width="640">
 </div>
@@ -748,121 +540,309 @@ pre.rouge {
 </div>
 </div>
 </div>
-<div class="sect1">
+<div class="sect1 data-line-54">
 <h2 id="_trabajo_a_desarrollar">Trabajo a desarrollar</h2>
 <div class="sectionbody">
-<div class="paragraph">
+<div class="paragraph data-line-56">
 <p>Deberá proponer e implementar soluciones con los esquemas algorítmicos de <strong><em>backtracking</em></strong> y <strong><em>branch-and-bound</em></strong>, según se requiera, a los problemas que se plantean a continuación.</p>
 </div>
-<div class="ulist">
+<div class="ulist data-line-58">
 <ul>
-<li>
+<li class="data-line-58">
 <p>(<strong><em>Backtracking</em></strong>) Determinar todos los posibles circuitos, si es que hubiera más de uno, partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland, donde Braulio debe dejar un lote de periódicos, exactamente una vez y regresar a Almería. Si hubiera más de uno, indique entre todos ellos el cirtuito de menor distancia.</p>
-<div class="paragraph">
+<div class="paragraph data-line-61">
 <p>Para este primer caso (<strong><em>Backtracking</em></strong>), implemente en Java el algoritmo <em>El problema del viajante</em> de las transparencias de clase de teoría, recomponiendolo para que funcione (ya que el de las transparecias puede tener algun error), definiendo las variables de forma que se adapten a la recursividad. Haga además un cálculo más o menos ajustado de las necesidades de pila que va a necesitar. En caso de tener problemas con el grafo de EDA I, utilice una matriz NxN.</p>
 </div>
 </li>
-<li>
+<li class="data-line-63">
 <p>(<strong><em>Branch-and-Bound</em></strong>) Determinar un circuito que, partiendo desde Almería, visite cada ciudad exactamente una vez, regresando a Almería y habiendo recorrido en total la menor distancia posible. Resolver este problema para la nueva red reducida de carreteras de EDAland.</p>
 </li>
-<li>
+<li class="data-line-65">
 <p>(<em>Opcional</em>) Haciendo uso del algoritmo <strong><em>Branch-and-Bound</em></strong> implementado en los apartados anteriores, debe intentar obtener el circuito en la red nacional de carreteras completa, partiendo de un núcleo urbano cualquiera, que visite cada población exactamente una vez, regrese al núcleo de partida y tenga la menor distancia posible. Para comprobar que los algoritmos funcionan sobre dicha red, lleve a cabo una <em>traza de la ejecución</em> de los mismos en la que muestre su estado en función de la iteración o cada cierto tiempo. ¿Qué conclusiones obtiene del intento?. ¿Existe alguna forma de resolver el problema que se le ha planteado?. Indíquelo todo de forma razonada.</p>
 </li>
-<li>
+<li class="data-line-67">
 <p>(<em>Opcional</em>) Lo mismo que el punto anterior, pero para el algoritmo <strong><em>Backtracking</em></strong>.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-69">
 <p>Para ello deberá realizar los siguientes apartados:</p>
 </div>
-<div class="ulist">
+<div class="ulist data-line-71">
 <ul>
-<li>
+<li class="data-line-71">
 <p><strong>Estudio de la implementación</strong>: Explicar los detalles más importantes de la implementación llevada a cabo, tanto de las estructuras de datos utilizadas para resolver el problema en cuestión, como de los algoritmos implementados. El código debe de estar razonablemente bien documentado (<code>JavaDoc</code>).</p>
 </li>
-<li>
+<li class="data-line-73">
 <p><strong>Estudio experimental</strong>: Validación de los algoritmos de <strong><em>backtracking</em></strong> y <strong><em>branch-and-bound</em></strong> implementados sobre las redes de EDAland proporcionadas. Para ello, se deberán obtener y comparar los tiempos de ejecución de los algoritmos implementados.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect1">
+<div class="sect1 data-line-76">
+<h2 id="_aproximación_a_la_solución">Aproximación a la solución</h2>
+<div class="sectionbody">
+<div class="sect2 data-line-78">
+<h3 id="_plantilla_de_implementación_en_java">Plantilla de implementación en Java</h3>
+<div class="paragraph data-line-80">
+<p>A continuación tenéis un esquema o plantilla de la implementación del algoritmo <strong><em>branch-and-bound</em></strong> para el problema del TSP en un grafo representado por <em>un mapa de adyacencia</em>. Se trata de que completéis los bloques que faltan, marcados como comentarios dentro del código.</p>
+</div>
+<div class="listingblock data-line-83">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">	// return the minimum value of the edges
+  	public double minimumEdgeValue() {
+  		double minimum = Double.MAX_VALUE;
+  		// Devuelve el menor valor de arista del grafo
+  		// Dos bucles 'for' anidados
+
+
+  		return minimum;
+  	}
+
+  	// TSP - BaB - Best-First
+	public ArrayList&lt;Vertex&gt; TSPBaB(Vertex source) {
+		TreeMap&lt;Vertex, Double&gt; neighborMap = adjacencyMap.get(source);
+		if (neighborMap == null)
+			return null;
+
+		minEdgeValue = minimumEdgeValue();
+
+		// Constructor de clase PathNode
+		PathNode firstNode = new PathNode(source);
+
+		PriorityQueue&lt;PathNode&gt; priorityQueue = new PriorityQueue&lt;&gt;();
+
+		priorityQueue.add(firstNode);
+
+		shortestCircuit = null;
+		double bestCost = Double.MAX_VALUE;
+
+		while(priorityQueue.size() &gt; 0) {
+
+			// Y (PathNode) = menorElemento de la cola de prioridad en funcion de 'estimatedCost'
+			PathNode Y = priorityQueue.poll();
+
+			if (Y.getEstimatedCost() &gt;= bestCost)
+                break;
+			else {
+				Vertex from = Y.lastVertexRes();
+				// Si el numero de vertices visitados es n
+				// y existe una arista que conecte 'from' con source
+				if ((Y.getVisitedVertices() == numberOfVertices()) &amp;&amp;
+					(containsEdge(from, source))) {
+					// Actualizar 'res' en Y añadiendo el vertice 'source'
+					// Actualizar 'totalCost' en Y con Y.totalCost + weight(from, source)
+
+					if (Y.getTotalCost() &lt; bestCost) {
+						// Actualizar 'bestCost', 'shortestDistanceCircuit' y 'shortestCircuit'
+
+					}
+				}
+				else {
+					// Iterar para todos los vertices adyacentes a from,
+					// a cada vertice lo denominamos 'to'
+
+						if (vertice 'to' todavia no ha sido visitado en Y) { // hacer uso de la funcion 'isVertexVisited(vertex)' de PathNode
+
+
+							PathNode X = new PathNode(Y); // Uso de constructor copia
+							// Anadir 'to' a 'res' en X
+							// Incrementar en 1 los vertices visitados en X
+							// Actualizar 'totalCost' en X con Y.totalCost + weight(from, to)
+
+							// Actualizar 'estimatedCost' en X con X.totalCost + ((nVertices - X.getVisitedVertices() + 1) * minEdgeValue)
+
+
+							if (X.getEstimatedCost() &lt; bestCost) {
+								priorityQueue.add(X);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		return shortestCircuit;
+	}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2 data-line-162">
+<h3 id="_otras_clases_necesarias">Otras clases necesarias</h3>
+<div class="paragraph data-line-164">
+<p>Además, necesitaréis la clase <code>PathNode.java</code></p>
+</div>
+<div class="listingblock data-line-167">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">protected class PathNode implements Comparable&lt;PathNode&gt; {
+    private ArrayList&lt;Vertex&gt; res; // result
+    private int visitedVertices; // The number of the visited vertices
+    private double totalCost; // The total cost of the path taken so far
+    private double estimatedCost; // Representing the lower bound of this state. <strong>*</strong> Priority
+
+    PathNode(Vertex vertexToVisit) {
+        res = new ArrayList&lt;Vertex&gt;();
+        res.add(vertexToVisit);
+        visitedVertices = 1;
+        totalCost = 0.0;
+        estimatedCost = numberOfVertices() * minEdgeValue;
+    }
+
+    PathNode(PathNode parentPathNode) {
+        // Constructor copia
+    }
+
+    @Override
+    public int compareTo(PathNode p) {
+        // El criterio de comparacion es 'estimatedCost' que se correponde con la prioridad
+    }
+
+    public ArrayList&lt;Vertex&gt; getRes() {
+        return res;
+    }
+
+    public void addVertexRes(Vertex v) {
+        this.res.add(v);
+    }
+
+    public Vertex lastVertexRes() {
+        // Devuelve el ultimo vertice que se ha anadido al camino (ultimo elemento de 'res')
+
+	}
+
+    public boolean isVertexVisited(Vertex v) {
+    	// Se ha visitado el vertice v si esta actualmente en 'res'. Una sola linea
+
+	}
+
+    public int getVisitedVertices() {
+        return visitedVertices;
+    }
+
+    public void setVisitedVertices(int visitedVertices) {
+        this.visitedVertices = visitedVertices;
+    }
+
+    public double getTotalCost() {
+        return totalCost;
+    }
+
+    public void setTotalCost(double totalCost) {
+        this.totalCost = totalCost;
+    }
+
+    public double getEstimatedCost() {
+        return estimatedCost;
+    }
+
+    public void setEstimatedCost(double estimatedCost) {
+        this.estimatedCost = estimatedCost;
+    }
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2 data-line-235">
+<h3 id="_método_main_con_argumentos">Método <code>main</code> con argumentos</h3>
+<div class="paragraph data-line-237">
+<p>Para la ejecución de los algoritmos, y con el objetivo de facilitar la ejecución de los distintos algoritmos implementados sobre los distintos archivos de datos <strong>sin tener que modificar el código fuente</strong>, se muestra cómo diseñar el método principal (<code>main</code>) para que permita recibir argumentos, separados por espacios en blanco. Para ello, se usará el parámetro <code>args</code> en la llamada a <code>main</code>, como en el siguiente ejemplo:</p>
+</div>
+<div class="listingblock data-line-240">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">package org.ualeda2.mainWithArguments;
+
+public class MainWithArguments {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("The number of arguments is: "+args.length);
+		System.out.println("Your first argument is: "+args[0]);
+        System.out.println("Your second argument is: "+args[1]);
+
+	}
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1 data-line-257">
 <h2 id="_entregas">Entregas</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Se ha de entregar, en fecha, en el repositorio <a href="https://docs.github.com/es/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#">privado</a> de GitHub para todas las prácticas de la asignatura con acceso para el/los profesor/es que evalúa/n las prácticas (mismo repositorio para todas las prácticas de EDA II), con la documentación y el código fuente requerido en la práctica:</p>
+<div class="paragraph data-line-259">
+<p>Se ha de entregar, en fecha, en el repositorio <a href="https://docs.github.com/es/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#" data-href="https://docs.github.com/es/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/setting-repository-visibility#">privado</a> de GitHub para todas las prácticas de la asignatura con acceso para el/los profesor/es que evalúa/n las prácticas (mismo repositorio para todas las prácticas de EDA II), con la documentación y el código fuente requerido en la práctica:</p>
 </div>
-<div class="ulist">
+<div class="ulist data-line-261">
 <ul>
-<li>
+<li class="data-line-261">
 <p>En dicho repositorio debe estar la carpeta llamada <code>practica_4</code>, donde debe haber como mínimo una carpeta <code>src</code> para el código fuente, y una carpeta <code>docs</code> para la documentación, incluyendo los JavaDoc y los diagramas de clase generados automáticamente a partir del código fuente, siguiendo la estructura de proyecto Java descrita en la práctica anterior.</p>
 </li>
-<li>
+<li class="data-line-263">
 <p>Memoria simplificada que explique lo que habéis realizado en la práctica. La memoria deberá tener el formato que se indica a continuación.</p>
 </li>
-<li>
+<li class="data-line-265">
 <p>Código fuente de la aplicación, desarrollada en JAVA, que resuelva todo lo planteado en la práctica. Recordad que tendréis que medir tiempos de ejecución de vuestras soluciones por lo que deberéis incluir las órdenes necesarias para ello en el código fuente. Igualmente, si ejecuta sus algoritmos sobre la red grande de EDAland, no olvidéis mostrar la traza de la ejecución de los mismos en la que muestre su estado en función de la iteración o cada cierto tiempo.</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-268">
 <p>La memoria de práctica a entregar debe ser breve, clara y estar bien escrita. Ésta debe incluir las siguientes secciones:</p>
 </div>
-<div class="ulist">
+<div class="ulist data-line-270">
 <ul>
-<li>
+<li class="data-line-270">
 <p>Una sección para cada uno de <strong>apartados propuestos</strong> a desarrollar en esta práctica (estudio de la implementación y estudio experimental).</p>
 </li>
-<li>
+<li class="data-line-272">
 <p>Se incluirá también un <strong>anexo</strong> con el diseño del código implementado con diagramas de clases (copiar aquí los diagramas de clases generados automáticamente).</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="sect1">
+<div class="sect1 data-line-274">
 <h2 id="_evaluación">Evaluación</h2>
 <div class="sectionbody">
-<div class="paragraph">
+<div class="paragraph data-line-276">
 <p>Cada apartado se evaluará independientemente, aunque es condición necesaria para aprobar la práctica que los programas implementados funcionen correctamente.</p>
 </div>
-<div class="ulist">
+<div class="ulist data-line-278">
 <ul>
-<li>
+<li class="data-line-278">
 <p>La implementación junto con la documentación del código se valorará sobre un <span class="green">60%</span></p>
 </li>
-<li>
+<li class="data-line-279">
 <p>El estudio de la implementación se valorará sobre un <span class="green">20%</span></p>
 </li>
-<li>
+<li class="data-line-280">
 <p>El estudio experimental se valorará sobre un <span class="green">20%</span></p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
+<div class="paragraph data-line-283">
 <p>Se podrá requerir la defensa del código y de la memoria por parte de profesor.</p>
 </div>
 </div>
 </div>
-<div class="sect1">
+<div class="sect1 data-line-285">
 <h2 id="_fecha_de_entrega">Fecha de entrega</h2>
 <div class="sectionbody">
-<div class="paragraph">
+<div class="paragraph data-line-287">
 <p>Fecha de entrega: <strong>5 de Junio</strong></p>
 </div>
 </div>
 </div>
-<div class="sect1">
+<div class="sect1 data-line-290">
 <h2 id="_resultados_nuevo">Resultados (<em>Nuevo</em>)</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>La ejecución de los algoritmos en la <em>nueva red reducida de carreteras</em> de EDAland (<a href="#fig1">Figura 1</a>) debe dar como resultado un total de <strong>34 circuitos</strong>. A continuación se muestra un ejemplo de resultados de ejecución (se muestran solo 3 de los 34 circuitos). El más corto de todos debe destacarse también al final:</p>
+<div class="paragraph data-line-292">
+<p>La ejecución de los algoritmos en la <em>nueva red reducida de carreteras</em> de EDAland (<a href="#fig1" data-href="#fig1">Figura 1</a>) debe dar como resultado un total de <strong>34 circuitos</strong>. A continuación se muestra un ejemplo de resultados de ejecución (se muestran solo 3 de los 34 circuitos). El más corto de todos debe destacarse también al final:</p>
 </div>
-<div class="listingblock">
+<div class="listingblock data-line-295">
 <div class="content">
-<pre class="rouge highlight"><code>Almeria - Granada - Cadiz - Huelva - Sevilla - Jaen - Badajoz - Caceres - Madrid - Valladolid - Vigo - Corunya - Oviedo - Bilbao - Lerida - Gerona - Barcelona - Zaragoza - Valencia - Albacete - Murcia - Almeria  ==&gt; 4999.0
+<pre class="highlight"><code>Almeria - Granada - Cadiz - Huelva - Sevilla - Jaen - Badajoz - Caceres - Madrid - Valladolid - Vigo - Corunya - Oviedo - Bilbao - Lerida - Gerona - Barcelona - Zaragoza - Valencia - Albacete - Murcia - Almeria  ==&gt; 4999.0
 Almeria - Granada - Cadiz - Huelva - Sevilla - Jaen - Badajoz - Caceres - Valladolid - Vigo - Corunya - Oviedo - Bilbao - Lerida - Gerona - Barcelona - Valencia - Zaragoza - Madrid - Albacete - Murcia - Almeria  ==&gt; 5271.0
 Almeria - Granada - Cadiz - Huelva - Sevilla - Jaen - Badajoz - Caceres - Valladolid - Vigo - Corunya - Oviedo - Bilbao - Lerida - Gerona - Barcelona - Zaragoza - Madrid - Albacete - Valencia - Murcia - Almeria  ==&gt; 5192.0
 ...
@@ -875,13 +855,13 @@ Almeria - .... ==&gt; ...</code></pre>
 </div>
 </div>
 </div>
-<div class="sect1">
+<div class="sect1 data-line-308">
 <h2 id="_referencias">Referencias</h2>
 <div class="sectionbody">
-<div class="ulist bibliography">
+<div class="ulist bibliography data-line-49">
 <ul class="bibliography">
-<li>
-<p><a id="gines-mapa"></a>[1] Gines García Mateos. El Reto del Viajante. Disponible online en <a href="http://dis.um.es/~ginesgm/retoviajante.html" class="bare">http://dis.um.es/~ginesgm/retoviajante.html</a> [Fecha de consulta: 19/03/2022]</p>
+<li class="data-line-49">
+<p><a id="gines-mapa"></a>[1] Gines García Mateos. El Reto del Viajante. Disponible online en <a href="http://dis.um.es/~ginesgm/retoviajante.html" class="undefined" data-href="http://dis.um.es/~ginesgm/retoviajante.html">http://dis.um.es/~ginesgm/retoviajante.html</a> [Fecha de consulta: 19/03/2022]</p>
 </li>
 </ul>
 </div>
