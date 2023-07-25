@@ -437,8 +437,223 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+pre.rouge table td { padding: 5px; }
+pre.rouge table pre { margin: 0; }
+pre.rouge .cm {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cp {
+  color: #999999;
+  font-weight: bold;
+}
+pre.rouge .c1 {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .cs {
+  color: #999999;
+  font-weight: bold;
+  font-style: italic;
+}
+pre.rouge .c, pre.rouge .ch, pre.rouge .cd, pre.rouge .cpf {
+  color: #999988;
+  font-style: italic;
+}
+pre.rouge .err {
+  color: #a61717;
+  background-color: #e3d2d2;
+}
+pre.rouge .gd {
+  color: #000000;
+  background-color: #ffdddd;
+}
+pre.rouge .ge {
+  color: #000000;
+  font-style: italic;
+}
+pre.rouge .gr {
+  color: #aa0000;
+}
+pre.rouge .gh {
+  color: #999999;
+}
+pre.rouge .gi {
+  color: #000000;
+  background-color: #ddffdd;
+}
+pre.rouge .go {
+  color: #888888;
+}
+pre.rouge .gp {
+  color: #555555;
+}
+pre.rouge .gs {
+  font-weight: bold;
+}
+pre.rouge .gu {
+  color: #aaaaaa;
+}
+pre.rouge .gt {
+  color: #aa0000;
+}
+pre.rouge .kc {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kd {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kn {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kp {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kr {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .kt {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .k, pre.rouge .kv {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .mf {
+  color: #009999;
+}
+pre.rouge .mh {
+  color: #009999;
+}
+pre.rouge .il {
+  color: #009999;
+}
+pre.rouge .mi {
+  color: #009999;
+}
+pre.rouge .mo {
+  color: #009999;
+}
+pre.rouge .m, pre.rouge .mb, pre.rouge .mx {
+  color: #009999;
+}
+pre.rouge .sa {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .sb {
+  color: #d14;
+}
+pre.rouge .sc {
+  color: #d14;
+}
+pre.rouge .sd {
+  color: #d14;
+}
+pre.rouge .s2 {
+  color: #d14;
+}
+pre.rouge .se {
+  color: #d14;
+}
+pre.rouge .sh {
+  color: #d14;
+}
+pre.rouge .si {
+  color: #d14;
+}
+pre.rouge .sx {
+  color: #d14;
+}
+pre.rouge .sr {
+  color: #009926;
+}
+pre.rouge .s1 {
+  color: #d14;
+}
+pre.rouge .ss {
+  color: #990073;
+}
+pre.rouge .s, pre.rouge .dl {
+  color: #d14;
+}
+pre.rouge .na {
+  color: #008080;
+}
+pre.rouge .bp {
+  color: #999999;
+}
+pre.rouge .nb {
+  color: #0086B3;
+}
+pre.rouge .nc {
+  color: #445588;
+  font-weight: bold;
+}
+pre.rouge .no {
+  color: #008080;
+}
+pre.rouge .nd {
+  color: #3c5d5d;
+  font-weight: bold;
+}
+pre.rouge .ni {
+  color: #800080;
+}
+pre.rouge .ne {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nf, pre.rouge .fm {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nl {
+  color: #990000;
+  font-weight: bold;
+}
+pre.rouge .nn {
+  color: #555555;
+}
+pre.rouge .nt {
+  color: #000080;
+}
+pre.rouge .vc {
+  color: #008080;
+}
+pre.rouge .vg {
+  color: #008080;
+}
+pre.rouge .vi {
+  color: #008080;
+}
+pre.rouge .nv, pre.rouge .vm {
+  color: #008080;
+}
+pre.rouge .ow {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .o {
+  color: #000000;
+  font-weight: bold;
+}
+pre.rouge .w {
+  color: #bbbbbb;
+}
+pre.rouge {
+  background-color: #f8f8f8;
+}
+</style>
 </head>
-<body class="article toc2 toc-right text-justify data-line-1">
+<body class="article toc2 toc-right text-justify">
 <div id="header">
 <h1>EDA II – Diseño del programa principal con argumentos</h1>
 <div id="toc" class="toc2">
@@ -458,25 +673,25 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
-<div class="paragraph data-line-13">
+<div class="paragraph">
 <p>Estructuras de datos y Algoritmos II (EDA II). 2º Grado en Ingeniería Informática. Universidad de Almería</p>
 </div>
-<div class="paragraph data-line-15">
+<div class="paragraph">
 <p><em>Version</em> <strong>curso.2022</strong></p>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-21">
+<div class="sect1">
 <h2 id="_objetivos">Objetivos</h2>
 <div class="sectionbody">
-<div class="exampleblock data-line-22">
+<div class="exampleblock">
 <div class="content">
-<div class="ulist data-line-23">
+<div class="ulist">
 <ul>
-<li class="data-line-23">
+<li>
 <p>Describir en Java el diseño del programa principal (<code>main</code>) con argumentos en la llamada</p>
 </li>
-<li class="data-line-24">
+<li>
 <p>Mostrar ejemplos de llamada al programa principal en la Práctica 4</p>
 </li>
 </ul>
@@ -485,147 +700,147 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
-<div class="sect1 data-line-27">
+<div class="sect1">
 <h2 id="_método_main_con_argumentos">Método <code>main</code> con argumentos</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-29">
+<div class="paragraph">
 <p>Para la ejecución de los algoritmos, y con el objetivo de facilitar la ejecución de los distintos algoritmos implementados sobre los distintos archivos de datos <strong>sin tener que modificar el código fuente</strong>, se muestra cómo diseñar el método principal (<code>main</code>) para que permita recibir argumentos, separados por espacios en blanco. Para ello, se usará el parámetro <code>args</code> en la llamada a <code>main</code>, como en el siguiente ejemplo:</p>
 </div>
-<div class="listingblock data-line-32">
+<div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">package org.ualeda2.mainWithArguments;
+<pre class="rouge highlight"><code data-lang="java"><span class="kn">package</span> <span class="nn">org.ualeda2.mainWithArguments</span><span class="o">;</span>
 
-public class MainWithArguments {
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MainWithArguments</span> <span class="o">{</span>
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("The number of arguments is: "+args.length);
-		System.out.println("Your first argument is: "+args[0]);
-        System.out.println("Your second argument is: "+args[1]);
+	<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+		<span class="c1">// TODO Auto-generated method stub</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The number of arguments is: "</span><span class="o">+</span><span class="n">args</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+		<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Your first argument is: "</span><span class="o">+</span><span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Your second argument is: "</span><span class="o">+</span><span class="n">args</span><span class="o">[</span><span class="mi">1</span><span class="o">]);</span>
 
-	}
+	<span class="o">}</span>
 
-}</code></pre>
+<span class="o">}</span></code></pre>
 </div>
 </div>
-<div class="sect2 data-line-48">
+<div class="sect2">
 <h3 id="_ejecución_con_eclipse">Ejecución con Eclipse</h3>
-<div class="paragraph data-line-50">
+<div class="paragraph">
 <p>Para ejecutar en Eclipse, como siembre, sobre la clase Java, botón derecho, <em>Run as&#8230;&#8203;, Java Application</em>:</p>
 </div>
-<div id="fig-runasjava" class="imageblock text-center data-line-54">
+<div id="fig-runasjava" class="imageblock text-center">
 <div class="content">
 <img src="modules/ROOT/images/runAsJava.png" alt="Run as&#8230;&#8203; Java Application" width="540">
 </div>
 <div class="title">Figura 1. Run as&#8230;&#8203; Java Application</div>
 </div>
-<div class="paragraph data-line-56">
+<div class="paragraph">
 <p>La salida por consola mostrará la excepción <code>ArrayIndexOutOfBoundsException</code> cuando intenta acceder a <code>args[0]</code>, porque no hemos añadido argumentos en la llamada.</p>
 </div>
-<div class="listingblock data-line-59">
+<div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>The number of arguments is: 0
+<pre class="rouge highlight"><code>The number of arguments is: 0
 <strong>Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 0 out of bounds for length 0
 	at org.ualeda2.mainWithArguments.MainWithArguments.main(MainWithArguments.java:8)</strong></code></pre>
 </div>
 </div>
-<div class="paragraph data-line-65">
+<div class="paragraph">
 <p>Para añadir argumentos, menú <em>Run, Run Configurations</em>. A continuación, buscamos la configuración de ejecución de <code>MainWithArguments</code>, y editamos la pestaña <code>Arguments</code>:</p>
 </div>
-<div id="fig-runconfigurations" class="imageblock text-center data-line-69">
+<div id="fig-runconfigurations" class="imageblock text-center">
 <div class="content">
 <img src="modules/ROOT/images/runConfigurations.png" alt="Run Configurations with Arguments" width="640">
 </div>
 <div class="title">Figura 2. Run Configurations with Arguments</div>
 </div>
-<div class="paragraph data-line-71">
+<div class="paragraph">
 <p>Volvemos a ejecutar, y ahora la ejecución será correcta.</p>
 </div>
-<div id="fig-consoleArgumentsOk" class="imageblock text-center data-line-75">
+<div id="fig-consoleArgumentsOk" class="imageblock text-center">
 <div class="content">
 <img src="modules/ROOT/images/consoleArgumentsOk.png" alt="Salida por consola correcta" width="640">
 </div>
 <div class="title">Figura 3. Salida por consola correcta</div>
 </div>
 </div>
-<div class="sect2 data-line-77">
+<div class="sect2">
 <h3 id="_ejecución_desde_el_terminal">Ejecución desde el terminal</h3>
-<div class="paragraph data-line-79">
+<div class="paragraph">
 <p>Otra alternativa para ejecutar nuestra aplicación con argumentos es llamarla desde el terminal.  Abre el terminal como una vista dentro de Eclipse: sobre la clase Java, botón derecho, <em>Show in local terminal, Terminal</em>.</p>
 </div>
-<div class="paragraph data-line-81">
+<div class="paragraph">
 <p>Y en el terminal llama a tu programa con:</p>
 </div>
-<div class="paragraph data-line-83">
+<div class="paragraph">
 <p><code>java MainWithArguments.java TSP graphEDAlandTSP.txt</code></p>
 </div>
-<div id="fig-consoleArgumentsOk" class="imageblock text-center data-line-87">
+<div id="fig-consoleArgumentsOk" class="imageblock text-center">
 <div class="content">
 <img src="modules/ROOT/images/consoleCallJava.png" alt="Llamada al programa Java desde consola con argumentos" width="840">
 </div>
 <div class="title">Figura 4. Llamada al programa Java desde consola con argumentos</div>
 </div>
-<div class="paragraph data-line-89">
+<div class="paragraph">
 <p>Esta es la <em>opción recomendada</em>, ya que te permite escribir los argumentos facilmente, y usar las flechas arriba y abajo para repetir comandos previos.</p>
 </div>
 </div>
 </div>
 </div>
-<div class="sect1 data-line-91">
+<div class="sect1">
 <h2 id="_argumentos_en_práctica_4">Argumentos en Práctica 4</h2>
 <div class="sectionbody">
-<div class="paragraph data-line-93">
+<div class="paragraph">
 <p>Los argumentos que debe permitir en la llamada al programa principal son:</p>
 </div>
-<div class="olist arabic data-line-95">
+<div class="olist arabic">
 <ol class="arabic">
-<li class="data-line-95">
+<li>
 <p>Primer argumento: <code>algoritmo</code> a ejecutar (ejemplos: <code>TSP_distance</code>, <code>HamiltonianCycles</code>, <code>Backtraking</code>, <code>BandB</code>, ¿otros?&#8230;&#8203;)</p>
 </li>
-<li class="data-line-96">
+<li>
 <p>Segundo argumento: <code>carpeta/archivoDeDatos.txt</code> (es recomendable que acepte <em>rutas relativas, no absolutas</em>)</p>
 </li>
-<li class="data-line-97">
+<li>
 <p>Tercer argumento (<em>opcional</em>): <code>vérticeDePartida</code></p>
 </li>
 </ol>
 </div>
-<div class="paragraph data-line-99">
+<div class="paragraph">
 <p><strong>Ejemplos de llamadas en la práctica 4</strong></p>
 </div>
-<div class="olist arabic data-line-101">
+<div class="olist arabic">
 <ol class="arabic">
-<li class="data-line-101">
+<li>
 <p><strong>Caso 1</strong> del <em>Trabajo a desarrollar</em>: (<strong><em>Backtracking</em></strong>)  <em>todos los posibles circuitos partiendo desde Almería, que recorren cada ciudad de la nueva red reducida de carreteras de EDAland. Si hubiera más de uno, indique entre todos ellos el cirtuito de menor distancia.</em>
 Argumentos:</p>
-<div class="literalblock data-line-104">
+<div class="literalblock">
 <div class="content">
 <pre>TSP_Backtraking dataset/graphEDAlandTSP.txt Almeria</pre>
 </div>
 </div>
 </li>
-<li class="data-line-106">
+<li>
 <p><strong>Caso 2</strong> del <em>Trabajo a desarrollar</em>: (<strong><em>Branch-and-Bound</em></strong>)  <em>Determinar un circuito que, partiendo desde Almería, visite cada ciudad exactamente una vez, regresando a Almería y habiendo recorrido en total la menor distancia posible. Resolver este problema para la nueva red reducida de carreteras de EDAland.</em>
 Argumentos:</p>
-<div class="literalblock data-line-109">
+<div class="literalblock">
 <div class="content">
 <pre>TSP_BaB dataset/graphEDAlandTSP.txt Almeria</pre>
 </div>
 </div>
 </li>
-<li class="data-line-111">
+<li>
 <p><strong>Caso 3</strong> del <em>Trabajo a desarrollar</em>: <em>obtener el circuito en la red nacional de carreteras completa, partiendo de un núcleo urbano cualquiera, que visite cada población exactamente una vez, regrese al núcleo de partida y tenga la menor distancia posible.</em>
 Argumentos:</p>
-<div class="literalblock data-line-114">
+<div class="literalblock">
 <div class="content">
 <pre>TSP_Backtraking dataset/graphEDAlandLarge.txt numVertice</pre>
 </div>
 </div>
 </li>
-<li class="data-line-117">
+<li>
 <p><strong>Caso 4</strong> del <em>Trabajo a desarrollar</em>:
 Argumentos (ejemplo):</p>
-<div class="literalblock data-line-120">
+<div class="literalblock">
 <div class="content">
 <pre>TSP_BaB dataset/graphEDAlandLarge.txt numVertice</pre>
 </div>
