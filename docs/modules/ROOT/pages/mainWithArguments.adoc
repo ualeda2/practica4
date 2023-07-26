@@ -82,7 +82,7 @@ Y en el terminal llama a tu programa con:
 
 `java MainWithArguments.java TSP graphEDAlandTSP.txt`
 
-[#fig-consoleArgumentsOk]
+[#fig-consoleArgumentsOk2]
 .Llamada al programa Java desde consola con argumentos
 image::consoleCallJava.png[Llamada al programa Java desde consola con argumentos,width=840,pdfwidth=80%,align="center"]
 
